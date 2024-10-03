@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS dokter;
-CREATE TABLE IF NOT EXISTS dokter;
 USE databaseKelompok4;
 
 CREATE TABLE DOKTER (

@@ -7,10 +7,8 @@ CREATE TABLE DOKTER (
 	[spesialisasi]	VARCHAR (10)	NOT NULL,
 	[telepon]	VARCHAR (20) 	NOT NULL,
 
-	/*[jadwal_praktik] VARCHAR (20) NOT NULL
-	id_ruangan = foreign key */
-	
-	[id_ruangan] VARCHAR (5) NOT NULL FOREIGN KEY
+	--[jadwal_praktik] VARCHAR (20) NOT NULL	
+	--[id_ruangan] VARCHAR (5) NOT NULL FOREIGN KEY()
 );
 
 INSERT INTO DOKTER (id_dokter, nama, spesialisasi, telepon)

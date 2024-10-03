@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS pasien;
-CREATE TABLE IF NOT EXISTS pasien;
+
 USE databaseKelompok4;
 
 CREATE TABLE pasien (

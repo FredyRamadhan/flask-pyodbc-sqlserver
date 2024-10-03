@@ -1,5 +1,5 @@
-databasenya namanya disamain aja biar enak
-dari aku nama databasenya **databaseKelompok4**
+databasenya namanya disamain aja biar enak--
+dari aku nama databasenya **databaseKelompok4**--
 biar pas masukin **USE [nama database]** semuanya bisa jalan
 
 kalau mau test bisa pull dari github buat di-run di laptop masing-masing

@@ -5,12 +5,16 @@ biar pas masukin **USE [nama database]** di local git semuanya bisa jalan---
 kalau mau test bisa pull dari github buat di-run di laptop masing-masing---  
         
         git init
+add origin
 
         git remote add origin https://github.com/FredyRamadhan/databaseKelompok4
+pull from repo
 
         git pull remote development
         
 janlup kalau mau **push remote origin** di branch jangan di Master---
+
+push to branch development
 
     git push -u remote development
 

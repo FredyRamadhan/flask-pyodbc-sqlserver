@@ -12,6 +12,7 @@ pull from repo
 
         git pull origin master
 edit file
+        edit filenya
 stage
 
         git add .

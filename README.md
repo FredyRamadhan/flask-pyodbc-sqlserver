@@ -1,8 +1,8 @@
-databasenya namanya disamain aja biar enak---   
-ini contoh aja nama databasenya **databaseKelompok4**---   
-biar pas masukin **USE [nama database]** di local git semuanya bisa jalan---   
+nama databasenya disamain 'Praktikum Basdat' aja, ngikut Habibi
 
-kalau mau test bisa pull dari github buat di-run di laptop masing-masing---  
+kalau mau test bisa pull dari github buat di-run di laptop masing-masing---
+
+bikin folder, buka powershell, cd namafolder/folder/yang/barusan/dibikin
         
         git init
 add origin
@@ -10,15 +10,15 @@ add origin
         git remote add origin https://github.com/FredyRamadhan/databaseKelompok4
 pull from repo
 
-        git pull remote development
-        
-janlup kalau mau **push remote origin** di branch jangan di Master---
+        git pull origin master
+edit file
+stage
 
-push to branch development
+        git add .
+commit
 
-    git push -u remote development
+        git commit -m 'update [apa yang diupdate]'
 
-atau biar enak langsung edit di editor github-nya langsung  
+push to branch master
 
-Kalau mau edit janlup di-`fork`, **jangan di branch Master**---  
-Nanti baru **open pull request**---  
+        git push -u origin master

@@ -1,4 +1,4 @@
-nama databasenya disamain 'Praktikum Basdat' aja, ngikut Habibi
+nama databasenya disamain [Praktikum Basdat] aja, ngikut Habibi
 
 kalau mau test bisa pull dari github buat di-run di laptop masing-masing---
 

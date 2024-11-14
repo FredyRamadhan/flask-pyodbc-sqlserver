@@ -12,7 +12,7 @@ pull from repo
 
         git pull origin master
 edit file
-        edit filenya
+        `edit filenya di ssms`
 stage
 
         git add .

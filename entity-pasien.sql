@@ -1,20 +1,19 @@
-DROP TABLE IF EXISTS pasien;
-
 USE databaseKelompok4;
 
+DROP TABLE IF EXISTS PASIEN;
 CREATE TABLE pasien (
 	[id_pasien]	VARCHAR(100)	PRIMARY KEY,
 	[nama_pasien]	VARCHAR(100)	NOT NULL,
 	[keluhan]	VARCHAR(50)	NOT NULL,
 	/*
-	[tanggal_lahir]		DATE			NOT NULL,
-	[id_dokter]			VARCHAR(10)		FOREIGN KEY(),
-	[id_obat]			VARCHAR(10)		FOREIGN KEY(),
-	[tanggal_periksa]	DATE			NOT NULL,
+	[TANGGAL_LAHIR]		DATE			NOT NULL,
+	[ID_DOKTER]		VARCHAR(10)		FOREIGN KEY(),
+	[ID_OBAT]		VARCHAR(10)		FOREIGN KEY(),
+	[TANGGAL_PERIKSA]	DATE			NOT NULL,
 	*/
 );
 
-INSERT INTO pasien (id_pasien, nama_pasien, keluhan)
-VALUES	('P0122', 'Bejo Sutejo', 'demam'),
-	('P0123', 'Bejo Suteji', 'pilek'),
-	('P0124', 'Bejo Suteja', 'batuk');
+INSERT INTO PASIEN (id_pasien, nama_pasien, keluhan)
+VALUES	('P0122', 'BEJO SUTEJO', 'DEMAM'),
+	('P0123', 'BEJO SUTEJI', 'PILEK'),
+	('P0124', 'BEJO SUTEJA', 'BATUK');

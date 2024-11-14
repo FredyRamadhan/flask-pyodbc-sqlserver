@@ -1,10 +1,24 @@
 databasenya namanya disamain aja biar enak---   
-dari aku nama databasenya **databaseKelompok4**---   
-biar pas masukin **USE [nama database]** semuanya bisa jalan---   
+ini contoh aja nama databasenya **databaseKelompok4**---   
+biar pas masukin **USE [nama database]** di local git semuanya bisa jalan---   
 
 kalau mau test bisa pull dari github buat di-run di laptop masing-masing---  
-janlup kalau mau **push remote origin** di branch jangan di Master---  
-atau biar enak langsung edit di github-nya langsung, udh ada editornya---  
+        
+        git init
+add origin
 
-Kalau mau edit janlup di-**fork** ya, **jangan di branch Master**---  
+        git remote add origin https://github.com/FredyRamadhan/databaseKelompok4
+pull from repo
+
+        git pull remote development
+        
+janlup kalau mau **push remote origin** di branch jangan di Master---
+
+push to branch development
+
+    git push -u remote development
+
+atau biar enak langsung edit di editor github-nya langsung  
+
+Kalau mau edit janlup di-`fork`, **jangan di branch Master**---  
 Nanti baru **open pull request**---  

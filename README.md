@@ -51,6 +51,10 @@
 
   ![image](https://github.com/user-attachments/assets/e14180b1-b7f5-47be-ac32-78271d67ec01)
 
+  nama servernya ini (server name)
+
+  ![image](https://github.com/user-attachments/assets/07ea63c9-db51-4aec-bc20-23844b97bd66)
+
 
 - To run the program
     

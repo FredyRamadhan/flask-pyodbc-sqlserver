@@ -1,8 +1,7 @@
+## Ben kepenak sih mending install aplikasi github desktop, jarene opal iso commit push pull seko aplikasine langsung
 # Requirement
-- Ben kepenak sih mending install aplikasi github desktop, jarene opal iso commit push pull seko aplikasine langsung
 
 `pip install pyodbc python-dotenv flask`
-`pip install flask`
 
 # Running the Program
 - bikin folder baru

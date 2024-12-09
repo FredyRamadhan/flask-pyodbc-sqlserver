@@ -95,9 +95,11 @@
   
               <!-- Page Number Links -->
               {% for page_num in range(1, total_pages + 1) %}
-                <li class="p-2 rounded-md mx-1 {% if page_num == current_page %}bg-cyan-600 text-white{% else %}bg-gray-300 text-white{% endif %}">
-                  <a class="page-link" href="{{ url_for('routes.dokter', page=page_num) }}">{{ page_num }}</a>
-                </li>
+                <a class="page-link" href="{{ url_for('routes.dokter', page=page_num) }}">
+                  <li class="p-2 rounded-md mx-1 {% if page_num == current_page %}bg-cyan-600 text-white{% else %}bg-gray-300 text-white{% endif %}">
+                    {{ page_num }}
+                  </li>
+                </a>
               {% endfor %}
   
               <!-- Next Page Link -->
@@ -122,7 +124,7 @@
       </div>
     </main>
 
-    <footer class="fixed bottom-0 w-full">
+    <footer class="w-full">
       <div class="bg-cyan-800 flex justify-center p-1 text-white">&copy; 2024 Kelompok 4</div>
     </footer>
   </body>

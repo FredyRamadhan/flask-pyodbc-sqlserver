@@ -4,11 +4,11 @@
 - Bikin folder baru
 - buka di vscode
 
- ![image](https://github.com/user-attachments/assets/c8edf4fa-58c0-423f-a8c3-15084e3374c4)
+  ![image](https://github.com/user-attachments/assets/c8edf4fa-58c0-423f-a8c3-15084e3374c4)
 
 - buka terminal vscode
 
-![image](https://github.com/user-attachments/assets/7d8bb244-e053-451e-ac30-42fb2c9ba4c4)
+  ![image](https://github.com/user-attachments/assets/7d8bb244-e053-451e-ac30-42fb2c9ba4c4)
 
 - ketik
 
@@ -20,7 +20,7 @@
 
       git remote add origin https://github.com/FredyRamadhan/databaseKelompok4
 
-![image](https://github.com/user-attachments/assets/d53b87b3-501b-4847-ba41-d8a1abbb787f)
+  ![image](https://github.com/user-attachments/assets/d53b87b3-501b-4847-ba41-d8a1abbb787f)
 
 - pull
 
@@ -44,7 +44,13 @@
 
       pip install pyodbc python-dotenv flask
 
-![image](https://github.com/user-attachments/assets/4c90c0f5-e484-4434-9318-c741bae689b0)
+  ![image](https://github.com/user-attachments/assets/4c90c0f5-e484-4434-9318-c741bae689b0)
+
+- Nama server-nya diganti dulu, sama nama database-nya disamain (buka file connect.py yang diganti yang ini)
+
+
+  ![image](https://github.com/user-attachments/assets/e14180b1-b7f5-47be-ac32-78271d67ec01)
+
 
 - To run the program
     
@@ -52,9 +58,11 @@
 
 - buka linknya di browser
 
+  ![image](https://github.com/user-attachments/assets/f11860c2-3635-436c-9db3-4eae11d2828e)
+
 
 # harusnya tampilannya kayak gini
 (TAMPILAN SEMENTARA WKWK)
 
-![image](https://github.com/user-attachments/assets/fc6258f4-1e4d-4dba-b79c-0a4e1c567e06)
+  ![image](https://github.com/user-attachments/assets/fc6258f4-1e4d-4dba-b79c-0a4e1c567e06)
 

@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS databaseKelompok4;
-CREATE DATABASE IF NOT EXISTS databaseKelompok4;

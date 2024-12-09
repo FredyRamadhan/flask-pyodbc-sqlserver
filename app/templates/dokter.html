@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Klinik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    
+    <header>
+      <nav>
+        <div class="flex align-start justify-between p-5 bg-cyan-800 text-white text-lg font-semibold">
+          <div class="flex align-middle p-2">
+            <a href="/">Klinik</a>
+          </div>
+          <div class="flex" id="navbarNav">
+            <ul class="flex align-middle gap-3 text-white p-2">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Dokter</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/dokter">Ruangan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/continent">Obat</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="flex flex-col align-middle gap-5 px-8 py-5">
+        <!-- <div class="my-4">
+          <h1 class="font-semibold text-xl text-center">Daftar Nama Dokter</h1>
+        </div> -->
+        <div class="flex">
+          <a class="p-2 bg-cyan-600 text-white rounded-md" href="/dokter/create">Tambahkan Data</a>
+        </div>
+        <div>
+
+          {% if table %}
+            <table class="bg-gray-200 p-4 ring-cyan-800 ring-1">
+              <thead class="bg-cyan-600 text mt-4 ml-4 p-4 ">
+                <tr class="mt-4 ml-4 text-white" >
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Id Dokter</th>
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Nama Dokter</th>
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Spesialisasi</th>
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Jadwal Praktik</th>
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Kontak</th>
+                  <th class="p-2 px-6 ring-cyan-800 ring-1">Ganti / Hapus</th>
+                </tr>
+              </thead>
+              <tbody class="bg-gray-200">
+                {% for A in table %}
+                  <tr>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 py-2 text-center">{{ A.id_dokter }}</td>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 py-2 text-center">{{ A.nama_dokter }}</td>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 py-2 text-center">{{ A.spesialisasi }}</td>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 py-2 text-center">{{ A.jadwal_praktik }}</td>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 py-2 text-center">{{ A.telp_dokter }}</td>
+                    <td class="ring-cyan-800 ring-[.6px] px-5 text-white py-2 flex gap-2">
+                      <!-- Update Button -->
+                      <a href="/dokter/update/{{ A.id_dokter }}" class="p-2 bg-cyan-800 rounded-md">Update</a>
+                      <!-- Delete Button -->
+                      <form action="/dokter/delete/{{ A.id_dokter }}" method="POST">
+                        <button type="submit" class="p-2 bg-red-800 rounded-md" onclick="return confirm('Are you sure you want to delete this continent?');">Delete</button>
+                      </form>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Controls -->
+          <div class="flex justify-center">
+            <ul class=" p-1 inline-flex">
+              <!-- Previous Page Link -->
+              {% if current_page > 1 %}
+                <li class="">
+                  <a class="p-2 mx-3" href="{{ url_for('routes.dokter', page=current_page-1) }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <span class="p-2 mx-3">&laquo;</span>
+                </li>
+              {% endif %}
+  
+              <!-- Page Number Links -->
+              {% for page_num in range(1, total_pages + 1) %}
+                <li class="p-2 rounded-md mx-1 {% if page_num == current_page %}bg-cyan-600 text-white{% else %}bg-gray-300 text-white{% endif %}">
+                  <a class="page-link" href="{{ url_for('routes.dokter', page=page_num) }}">{{ page_num }}</a>
+                </li>
+              {% endfor %}
+  
+              <!-- Next Page Link -->
+              {% if current_page < total_pages %}
+                <li class="page-item">
+                  <a class="p-2 mx-3" href="{{ url_for('routes.dokter', page=current_page+1) }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <span class="p-2 mx-3">&raquo;</span>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+
+
+        {% else %}
+          <p class="text-center">No data found.</p>
+        {% endif %}
+      </div>
+    </main>
+    
+    <footer class="bg-primary text-light text-center p-3 mt-5 shadow-sm">
+      <p>&copy; 2024 Kelompok 4</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>

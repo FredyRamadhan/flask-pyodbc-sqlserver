@@ -1,25 +1,27 @@
-nama databasenya disamain [Praktikum Basdat] aja, ngikut Habibi
+# Requirement
+- Ben kepenak sih mending install aplikasi github desktop, jarene opal iso commit push pull seko aplikasine langsung
 
-kalau mau test bisa pull dari github buat di-run di laptop masing-masing---
+`pip install pyodbc python-dotenv flask`
+`pip install flask`
 
-bikin folder, buka powershell, cd namafolder/folder/yang/barusan/dibikin
-        
-        git init
-add origin
+# Running the Program
+- bikin folder baru
+- buka powershell di folder itu
+- ketik
+      `git init`
 
-        git remote add origin https://github.com/FredyRamadhan/databaseKelompok4
-pull from repo
+      git remote add origin https://github.com/FredyRamadhan/project-basdat-kelompok-4
 
-        git pull origin master
-edit file
-        `edit filenya di ssms`
-stage
+      git pull origin master
 
-        git add .
-commit
+buka vscode
 
-        git commit -m 'update [apa yang diupdate]'
+    code .
 
-push to branch master
+- if using venv, run this code first
 
-        git push -u origin master
+    `.venv/Scripts/activate.ps1`
+
+- To run the program
+    
+    `python main.py`

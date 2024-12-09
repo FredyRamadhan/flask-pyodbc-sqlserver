@@ -68,5 +68,6 @@
 # harusnya tampilannya kayak gini
 (TAMPILAN SEMENTARA WKWK)
 
-  ![image](https://github.com/user-attachments/assets/fc6258f4-1e4d-4dba-b79c-0a4e1c567e06)
+![image](https://github.com/user-attachments/assets/2522584d-ec1b-4e7b-9af4-3039e93f6992)
+
 

@@ -24,6 +24,24 @@ def select(query):
     else:
         return None
 
+def update(query):
+    conn = create_connection()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute(query)
+            conn.commit()
+            flash('Table updated successfully!', 'success')
+            table = cursor.fetchall()
+            return table
+        except pyodbc.Error as e:
+            print(f"Database error: {e}")
+            return None
+        finally:
+            cursor.close()
+            conn.close()
+    else:
+        return None
 
 @routes.route('/dokter')
 def dokter():

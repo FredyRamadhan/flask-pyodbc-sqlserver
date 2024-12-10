@@ -1,57 +1,45 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from connect import create_connection
 
-# Create a blueprint for modular routing
 routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 def index():
     return render_template('home.html')
 
+def select(query):
+    conn = create_connection()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute(query)
+            table = cursor.fetchall()
+            return table
+        except pyodbc.Error as e:
+            print(f"Database error: {e}")
+            return None
+        finally:
+            cursor.close()
+            conn.close()
+    else:
+        return None
+
+
 @routes.route('/dokter')
 def dokter():
-    # Get the current page number from the query string (default to page 1)
-    page = request.args.get('page', 1, type=int)
-    per_page = 10  # Number of items per page
-    
-    # Calculate the starting row for the query (offset)
-    offset = (page - 1) * per_page
-    
-    # Get a connection to the database
-    conn = create_connection()
-    
-    if conn:
-        # Create a cursor from the connection
-        cursor = conn.cursor()
-        
-        # Execute a query with pagination using OFFSET and FETCH NEXT
-        cursor.execute('''
-            SELECT * FROM dokter
-            ORDER BY id_dokter  -- or any other column for sorting
-            OFFSET ? ROWS
-            FETCH NEXT ? ROWS ONLY
-        ''', (offset, per_page))
+    table = select('''
+        Select * from dokter
+        order by id_dokter
+        ''')
+    return render_template('dokter.html', table=table)
 
-        # cursor.execute('SELECT * FROM dokter')
-        
-        # Fetch the results
-        table = cursor.fetchall()
-        
-        # Get the total count of rows to calculate the number of pages
-        cursor.execute('SELECT COUNT(*) FROM dokter')
-        total_count = cursor.fetchone()[0]
-        
-        # Close the cursor and connection
-        cursor.close()
-        conn.close()
-        
-        # Calculate total number of pages
-        total_pages = (total_count + per_page - 1) // per_page
-        
-        # Pass the results, total pages, and current page to the template
-        return render_template('dokter.html', table=table, total_pages=total_pages, current_page=page)
-    else:
-        return render_template('dokter.html', table=None)
+@routes.route('/dokter/by_spesialisasi')
+def dokter_by_sp():
+    table = select('''
+        select * from dokter
+        where spesialisasi = 'umum'
+        order by id_dokter''')
+    return render_template('dokter.html', table=table)
 
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():

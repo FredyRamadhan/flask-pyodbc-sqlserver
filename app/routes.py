@@ -7,6 +7,8 @@ routes = Blueprint('routes', __name__)
 def index():
     return render_template('home.html')
 
+def create(data_id, value1))
+
 def select(query):
     conn = create_connection()
     if conn:
@@ -15,32 +17,32 @@ def select(query):
             cursor.execute(query)
             table = cursor.fetchall()
             return table
-        except pyodbc.Error as e:
-            print(f"Database error: {e}")
-            return None
+        except Exception as e:
+            flash(f'Error: {str(e)}', 'danger')
         finally:
             cursor.close()
             conn.close()
     else:
         return None
 
-def update(query):
+def update(data_id, value1):
     conn = create_connection()
     if conn:
         try:
             cursor = conn.cursor()
-            cursor.execute(query)
+            cursor.execute("UPDATE dokter SET nama_dokter = ? WHERE id_dokter = ?", (value1, data_id))
             conn.commit()
             flash('Table updated successfully!', 'success')
             table = cursor.fetchall()
             return table
-        except pyodbc.Error as e:
-            print(f"Database error: {e}")
-            return None
+        except Exception as e:
+            flash(f'Error: {str(e)}', 'danger')
         finally:
             cursor.close()
             conn.close()
     else:
+        cursor.close()
+        conn.close()
         return None
 
 @routes.route('/dokter')
@@ -61,11 +63,9 @@ def dokter_by_sp():
 
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
-    # Handle the form submission when the method is POST
     if request.method == 'POST':
-        # properti input digunakan disini
         dokter_name = request.form['nama_dokter']
-        
+        create()
         # Get a connection to the database
         conn = create_connection()
         
@@ -93,38 +93,12 @@ def create_dokter():
 
 @routes.route('/dokter/update/<id_dokter>', methods=['GET', 'POST'])
 def update_dokter(id_dokter):
-    conn = create_connection()
-    if conn:
-        cursor = conn.cursor()
-        try:
-            if request.method == 'POST':
-                # Get updated data from the form
-                new_name = request.form['nama_dokter']
-
-                # Update the dokter in the database
-                cursor.execute('UPDATE dokter SET nama_dokter = ? WHERE id_dokter = ?', (new_name, id_dokter))
-                conn.commit()
-
-                flash('Table A updated successfully!', 'success')
-                return redirect(url_for('routes.dokter'))
-
-            # For GET request, fetch current data to pre-fill the form
-            cursor.execute('SELECT nama_dokter FROM dokter WHERE id_dokter = ?', (id_dokter))
-            table = cursor.fetchone()
-            if not table:
-                flash('Table not found!', 'danger')
-                return redirect(url_for('routes.dokter'))
-
-            # Pass the current data to the form
-            return render_template('editDokter.html', table={'nama_dokter': table[0]})
-        except Exception as e:
-            flash(f'Error: {str(e)}', 'danger')
-        finally:
-            cursor.close()
-            conn.close()
-    else:
-        flash('Error: Unable to connect to the database.', 'danger')
+    if request.method == 'POST':
+        new_name = request.form['nama_dokter']
+        update(id_dokter, new_name)
         return redirect(url_for('routes.dokter'))
+    table = select("select nama_dokter from dokter where id_dokter = 'd001'")
+    return render_template('editDokter.html', table=table[0])
 
 
 # @routes.route('/update')

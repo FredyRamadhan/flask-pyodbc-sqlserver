@@ -1,49 +1,16 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from connect import create_connection
+from app.query_functions import select, update
 
 routes = Blueprint('routes', __name__)
+
+
 
 @routes.route('/')
 def index():
     return render_template('home.html')
 
-def create(data_id, value1))
 
-def select(query):
-    conn = create_connection()
-    if conn:
-        try:
-            cursor = conn.cursor()
-            cursor.execute(query)
-            table = cursor.fetchall()
-            return table
-        except Exception as e:
-            flash(f'Error: {str(e)}', 'danger')
-        finally:
-            cursor.close()
-            conn.close()
-    else:
-        return None
-
-def update(data_id, value1):
-    conn = create_connection()
-    if conn:
-        try:
-            cursor = conn.cursor()
-            cursor.execute("UPDATE dokter SET nama_dokter = ? WHERE id_dokter = ?", (value1, data_id))
-            conn.commit()
-            flash('Table updated successfully!', 'success')
-            table = cursor.fetchall()
-            return table
-        except Exception as e:
-            flash(f'Error: {str(e)}', 'danger')
-        finally:
-            cursor.close()
-            conn.close()
-    else:
-        cursor.close()
-        conn.close()
-        return None
 
 @routes.route('/dokter')
 def dokter():
@@ -53,6 +20,8 @@ def dokter():
         ''')
     return render_template('dokter.html', table=table)
 
+
+
 @routes.route('/dokter/by_spesialisasi')
 def dokter_by_sp():
     table = select('''
@@ -60,6 +29,8 @@ def dokter_by_sp():
         where spesialisasi = 'umum'
         order by id_dokter''')
     return render_template('dokter.html', table=table)
+
+
 
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
@@ -91,6 +62,8 @@ def create_dokter():
     # Render the form for GET request
     return render_template('createDokter.html')
 
+
+
 @routes.route('/dokter/update/<id_dokter>', methods=['GET', 'POST'])
 def update_dokter(id_dokter):
     if request.method == 'POST':
@@ -101,9 +74,6 @@ def update_dokter(id_dokter):
     return render_template('editDokter.html', table=table[0])
 
 
-# @routes.route('/update')
-# def update_dok():
-#     return render_template('editDokter.html')
 
 @routes.route('/dokter/delete/<id_dokter>', methods=['POST'])
 def delete_continent(id_dokter):
@@ -129,30 +99,6 @@ def delete_continent(id_dokter):
         flash('Error: Unable to connect to the database.', 'danger')
     
     return redirect(url_for('routes.dokter'))
-
-
-
-
-
-
-
-
-@routes.errorhandler(404)
-def page_not_found(e):
-    return render_template('404.html'), 404
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

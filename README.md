@@ -32,13 +32,13 @@
 
       cd databaseKelompok4
 
-- mending pake virtual environment
+- virtual environment
 
       py -3 -m venv .venv
 
 - if using venv, run this code first
 
-      .venv/Scripts/activate.ps1
+      .venv/Scripts/activate
 
 - terus install ini dulu
 

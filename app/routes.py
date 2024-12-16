@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from connect import create_connection
-from app.query_functions import select, update
+from app.query_functions import create, select, update, delete, other_queries
 
 routes = Blueprint('routes', __name__)
 
@@ -35,31 +35,16 @@ def dokter_by_sp():
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
     if request.method == 'POST':
-        dokter_name = request.form['nama_dokter']
-        create()
-        # Get a connection to the database
-        conn = create_connection()
+        id_dokter = request.form['id_dokter']
+        nama_dokter = request.form['nama_dokter']
+        spesialisasi = request.form['spesialisasi']
+        telp_dokter = request.form['telp_dokter']
+        jadwal_praktik = request.form['jadwal_praktik']
         
-        # Check if the connection was successful
-        if conn:
-            cursor = conn.cursor()
-            try:
-                # Insert the new dokter into the database
-                cursor.execute('INSERT INTO dokter (nama_dokter) VALUES (?)', (dokter_name))
-                conn.commit()  # Commit the transaction
-                
-                # Redirect to the dokter list with a success message
-                flash('dokter added successfully!', 'success')
-                return redirect(url_for('routes.dokter'))
-            except Exception as e:
-                flash(f'Error: {str(e)}', 'danger')  # Flash error message
-            finally:
-                cursor.close()
-                conn.close()
-        
-        flash('Failed to connect to the database', 'danger')  # Error if connection failed
+        data = "'" + "', '".join([id_dokter, nama_dokter, spesialisasi, telp_dokter, jadwal_praktik]) + "'"
+        columns = ", ".join(['id_dokter', 'nama_dokter', 'spesialisasi', 'telp_dokter', 'jadwal_praktik'])
 
-    # Render the form for GET request
+        create('dokter', columns, data)
     return render_template('createDokter.html')
 
 
@@ -121,3 +106,10 @@ def filter():
     else:
         flash('Error: unable to connect to the database', 'danger')
     return redirect(url_for('routes.dokter'))
+
+
+@routes.route('/testestes')
+def testestes():
+    other_queries('''
+                                                     
+        ''')

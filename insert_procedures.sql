@@ -2,8 +2,13 @@ USE KLINIK
 
 
 -- EXECUTE PROCEDURE INSERT DOKTER, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
-EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Anwar', @spesialisasi = 'Umim', @telp_dokter = '081234567890', @jadwal_praktik = 'Senin';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Anwar', @spesialisasi = 'Umum', @telp_dokter = '081234567890', @jadwal_praktik = 'Senin';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Budi', @spesialisasi = 'Anak', @telp_dokter = '082345678901', @jadwal_praktik = 'Selasa';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Citra', @spesialisasi = 'THT', @telp_dokter = '083456789012', @jadwal_praktik = 'Rabu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Dira', @spesialisasi = 'Kandungan', @telp_dokter = '084567890123', @jadwal_praktik = 'Kamis';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Eko', @spesialisasi = 'Gigi', @telp_dokter = '085678901234', @jadwal_praktik = 'Jumat';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Farah', @spesialisasi = 'Umum', @telp_dokter = '086789012345', @jadwal_praktik = 'Sabtu';
+
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
 

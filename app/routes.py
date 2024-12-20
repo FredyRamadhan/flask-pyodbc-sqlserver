@@ -86,7 +86,7 @@ def create_pasien():
 @routes.route('/obat')
 def table_obat():
     table = select("select * from obat order by id_obat")
-    return render_template('table_pasien.html', table=table)
+    return render_template('table_obat.html', table=table)
     
 @routes.route('/ruangan')
 def table_ruangan():

@@ -81,3 +81,24 @@ def create_pasien():
         
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = '';")
     return render_template('insert_dokter.html')
+
+
+@routes.route('/obat')
+def table_obat():
+    table = select("select * from obat order by id_obat")
+    return render_template('table_pasien.html', table=table)
+    
+@routes.route('/ruangan')
+def table_ruangan():
+    table = select("select * from ruangan order by id_ruangan")
+    return render_template('table_ruangan.html', table=table)
+    
+@routes.route('/pemeriksaan')
+def table_pemeriksaan():
+    table = select("select * from pemeriksaan order by id_pemeriksaan")
+    return render_template('table_pemeriksaan.html', table=table)
+    
+@routes.route('/resep')
+def table_resep():
+    table = select("select * from resep order by id_resep")
+    return render_template('table_resep.html', table=table)

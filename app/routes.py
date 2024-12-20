@@ -4,10 +4,16 @@ from app.query_functions import create, select, update, delete, other_queries
 
 routes = Blueprint('routes', __name__)
 
+# ROUTE DASHBOARD
 @routes.route('/')
 def index():
     return render_template('dashboard.html')
 
+
+
+# ROUTE UNTUK CRUD DOKTER
+
+# READ
 @routes.route('/dokter')
 def dokter():
     table = select('''
@@ -16,6 +22,7 @@ def dokter():
         ''')
     return render_template('table_dokter.html', table=table)
 
+# ROUTE UNTUK FILTERING TABEL DOKTER
 @routes.route('/dokter/by_spesialisasi')
 def dokter_by_sp():
     table = select('''
@@ -24,6 +31,7 @@ def dokter_by_sp():
         order by id_dokter''')
     return render_template('table_dokter.html', table=table)
 
+# CREATE
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
     if request.method == 'POST':
@@ -39,6 +47,9 @@ def create_dokter():
         create('dokter', columns, data)
     return render_template('insert_dokter.html')
 
+
+
+# UPDATE DOKTER
 @routes.route('/dokter/update/<id_dokter>', methods=['GET', 'POST'])
 def update_dokter(id_dokter):
     if request.method == 'POST':
@@ -48,6 +59,8 @@ def update_dokter(id_dokter):
     table = select(f"select nama_dokter from dokter where id_dokter = '{id_dokter}'")
     return render_template('update_dokter.html', table=table[0])
 
+
+#DELETE DOKTER
 @routes.route('/dokter/delete/<id_dokter>', methods=['POST'])
 def delete_continent(id_dokter):
     conn = create_connection()

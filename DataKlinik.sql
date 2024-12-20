@@ -1,8 +1,7 @@
 -- memasukkan data ke tabel
 use KLINIK
 -- isi tabel dokter
-INSERT INTO dokter (id_dokter, nama_dokter, spesialisasi, telp_dokter, jadwal_praktik) 
-VALUES
+/*
 ('D001', 'Anwar', 'Umum', '081234567890', 'Senin'),
 ('D002', 'Budi', 'Anak', '082345678901', 'Selasa'),
 ('D003', 'Citra', 'THT', '083456789012', 'Rabu'),
@@ -20,6 +19,7 @@ VALUES
 ('D015', 'Oki', 'THT', '089678901234', 'Senin'),
 ('D016', 'Java', 'Mata', '081236547896', 'Sabtu'),
 ('D017', 'Bunga', 'Penyakit Dalam', '082134956847', 'Selasa');
+*/
 
 -- isi tabel petugas admin
 INSERT INTO petugas_admin (id_petugas, nama_petugas) 
@@ -42,9 +42,7 @@ VALUES
 ('A016', 'Zaky Arya'),
 ('A017', 'Fara Anna');
 
--- isi tabel pasien
-INSERT INTO pasien (id_pasien, nama_pasien, keluhan, tanggal_lahir, jenis_kelamin, no_hp, alamat, id_petugas) 
-VALUES
+/*
 ('33720555120519900001', 'Ahmad Yusuf', 'Demam', '1990-05-12', 'L', '081234567890', 'Jl. Mawar No.1', 'A001'),
 ('33720555200719880002', 'Budi Setiawan', 'Batuk', '1988-07-20', 'L', '081234567891', 'Jl. Melati No.2', 'A002'),
 ('33720555180319950003', 'Citra Ayu', 'Sakit Kepala', '1995-03-18', 'P', '081234567892', 'Jl. Anggrek No.3', 'A003'),
@@ -62,7 +60,7 @@ VALUES
 ('33720555080719900015', 'Omar Ridwan', 'Pilek', '1990-07-08', 'L', '081234567804', 'Jl. Kaktus No.15', 'A015'),
 ('33720555281019900004', 'Idul Adha', 'Sakit Mata', '1990-10-28', 'L', '081133335555', 'Jl Ir Tentara pelajar no 36, Mojosongo, Surakarta', 'A016'),
 ('33720555210419940004', 'Idul Fitri', 'Sakit Perut', '1994-04-21', 'P', '08123456789', 'Jl Ir Sutami no 36, jebres Surakarta', 'A017');
-
+*/
 -- isi tabel ruangan
 INSERT INTO ruangan (id_ruangan, nama_ruangan) 
 VALUES
@@ -106,8 +104,7 @@ VALUES
 ('O016', 'Tetrachloride', '20000', 80, 'Tetes Mata Antioksidan'),
 ('O017', 'Doen Suspension', '10000', 200, 'Antasida');
 
-INSERT INTO resep (id_resep, id_obat, id_pasien, id_dokter) 
-VALUES
+/*
 ('RSP001', 'O001', '33720555120519900001', 'D001'),
 ('RSP002', 'O002', '33720555200719880002', 'D002'),
 ('RSP003', 'O003', '33720555180319950003', 'D003'),
@@ -146,3 +143,4 @@ VALUES
 ('PM015', 'D015', '33720555080719900015', 'R015', '2024-11-24', 'Flu Berat', 350000),
 ('PM016', 'D016', '33720555281019900004', 'R016', '2024-11-23', 'Katarak', 500000),
 ('PM017', 'D017', '33720555210419940004', 'R017', '2024-11-26', 'Penyakit Gangguan Pencernaan', 200000);
+*/

@@ -2,8 +2,13 @@ USE KLINIK
 
 
 -- EXECUTE PROCEDURE INSERT DOKTER, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
-EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Anwar', @spesialisasi = 'Umim', @telp_dokter = '081234567890', @jadwal_praktik = 'Senin';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Anwar', @spesialisasi = 'Umum', @telp_dokter = '081234567890', @jadwal_praktik = 'Senin';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Budi', @spesialisasi = 'Anak', @telp_dokter = '082345678901', @jadwal_praktik = 'Selasa';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Citra', @spesialisasi = 'THT', @telp_dokter = '083456789012', @jadwal_praktik = 'Rabu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Dira', @spesialisasi = 'Kandungan', @telp_dokter = '084567890123', @jadwal_praktik = 'Kamis';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Eko', @spesialisasi = 'Gigi', @telp_dokter = '085678901234', @jadwal_praktik = 'Jumat';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Farah', @spesialisasi = 'Umum', @telp_dokter = '086789012345', @jadwal_praktik = 'Sabtu';
+
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
 
@@ -31,6 +36,22 @@ EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @tel
 
 -- EXECUTE PROCEDURE INSERT PASIEN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '', @keluhan = '', @jenis_kelamin = '', @tanggal_lahir = '', @alamat = '', @no_hp = '', @id_petugas = '';
+
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = ''; -- Dokter Anak
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Siti', @keluhan = 'Sakit tenggorokan', @jenis_kelamin = 'P', @tanggal_lahir = '1992-05-15', @alamat = 'Jl. Mawar No. 3', @no_hp = '081234567891', @id_petugas = ''; -- Dokter THT
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dewi', @keluhan = 'Nyeri saat hamil', @jenis_kelamin = 'P', @tanggal_lahir = '1989-10-22', @alamat = 'Jl. Anggrek No. 7', @no_hp = '081234567892', @id_petugas = ''; -- Dokter Kandungan
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Budi', @keluhan = 'Gigi berlubang', @jenis_kelamin = 'L', @tanggal_lahir = '2000-08-08', @alamat = 'Jl. Tulip No. 12', @no_hp = '081234567893', @id_petugas = ''; -- Dokter Gigi
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rina', @keluhan = 'Pusing dan flu', @jenis_kelamin = 'P', @tanggal_lahir = '1975-01-13', @alamat = 'Jl. Kenanga No. 10', @no_hp = '081234567894', @id_petugas = ''; -- Dokter Umum
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Joko', @keluhan = 'Batuk berdahak', @jenis_kelamin = 'L', @tanggal_lahir = '1985-03-18', @alamat = 'Jl. Dahlia No. 9', @no_hp = '081234567895', @id_petugas = ''; -- Dokter Umum
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rudi', @keluhan = 'Demam dan diare', @jenis_kelamin = 'L', @tanggal_lahir = '1990-04-12', @alamat = 'Jl. Sakura No. 11', @no_hp = '081234567896', @id_petugas = ''; -- Dokter Umum
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Lina', @keluhan = 'Gigi bengkak', @jenis_kelamin = 'P', @tanggal_lahir = '1995-09-29', @alamat = 'Jl. Teratai No. 4', @no_hp = '081234567897', @id_petugas = ''; -- Dokter Gigi
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Tina', @keluhan = 'Sesak nafas', @jenis_kelamin = 'P', @tanggal_lahir = '2001-06-06', @alamat = 'Jl. Bakung No. 2', @no_hp = '081234567898', @id_petugas = ''; -- Dokter THT
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Ahmad', @keluhan = 'Cacar air', @jenis_kelamin = 'L', @tanggal_lahir = '2012-11-02', @alamat = 'Jl. Kamboja No. 14', @no_hp = '081234567899', @id_petugas = ''; -- Dokter Anak
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fajar', @keluhan = 'Nyeri dada', @jenis_kelamin = 'L', @tanggal_lahir = '1983-07-30', @alamat = 'Jl. Cemara No. 6', @no_hp = '081234567800', @id_petugas = ''; -- Dokter Umum
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Nisa', @keluhan = 'Sakit gigi', @jenis_kelamin = 'P', @tanggal_lahir = '1997-12-25', @alamat = 'Jl. Flamboyan No. 1', @no_hp = '081234567801', @id_petugas = ''; -- Dokter Gigi
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Bayu', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2008-09-14', @alamat = 'Jl. Nusa Indah No. 2', @no_hp = '081234567802', @id_petugas = ''; -- Dokter Anak
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fitri', @keluhan = 'Pusing terus-menerus', @jenis_kelamin = 'P', @tanggal_lahir = '1978-11-08', @alamat = 'Jl. Cempaka No. 8', @no_hp = '081234567803', @id_petugas = ''; -- Dokter Umum
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gusi', @jenis_kelamin = 'P', @tanggal_lahir = '1994-04-19', @alamat = 'Jl. Teratai Putih No. 10', @no_hp = '081234567804', @id_petugas = ''; -- Dokter Gigi
 
 
 -- EXECUTE PROCEDURE INSERT PEMERIKSAAN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY

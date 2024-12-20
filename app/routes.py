@@ -21,15 +21,6 @@ def dokter():
         ''')
     return render_template('table_dokter.html', table=table)
 
-# ROUTE UNTUK FILTERING TABEL DOKTER
-@routes.route('/dokter/by_spesialisasi')
-def dokter_by_sp():
-    table = select('''
-        select * from dokter
-        where spesialisasi = 'umum'
-        order by id_dokter''')
-    return render_template('table_dokter.html', table=table)
-
 # CREATE
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
@@ -41,8 +32,6 @@ def create_dokter():
         
         insert_update_queries(f"EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '{nama_dokter}', @spesialisasi = '{spesialisasi}', @telp_dokter = '{telp_dokter}', @jadwal_praktik = '{jadwal_praktik}'")
     return render_template('insert_dokter.html')
-
-
 
 # UPDATE DOKTER
 @routes.route('/dokter/update/<id_dokter>', methods=['GET', 'POST'])
@@ -58,7 +47,6 @@ def update_dokter(id_dokter):
     table = select(f"select nama_dokter from dokter where id_dokter = '{id_dokter}'")
     return render_template('update_dokter.html', table=table[0])
 
-
 #DELETE DOKTER
 @routes.route('/dokter/delete/<id_dokter>', methods=['POST'])
 def delete_continent(id_dokter):
@@ -66,4 +54,30 @@ def delete_continent(id_dokter):
     
     return redirect(url_for('routes.dokter'))
 
+# ROUTE UNTUK FILTERING TABEL DOKTER
+@routes.route('/dokter/by_spesialisasi')
+def dokter_by_sp():
+    table = select('''
+        select * from dokter
+        where spesialisasi = 'umum'
+        order by id_dokter''')
+    return render_template('table_dokter.html', table=table)
 
+
+#PASIEN
+@routes.route('/pasien')
+def table_pasien():
+    table = select("select * from pasien order by id_pasien")
+    return render_template('table_pasien.html', table=table)
+
+
+@routes.route('/pasien/create', methods=['GET', 'POST'])
+def create_pasien():
+    if request.method == 'POST':
+        nama_pasien = request.form['nama_pasien']
+        keluhan = request.form['keluhan']
+        tanggal_lahir = request.form['tanggal_lahir']
+        jenis_kelamin = request.form['jenis_kelamin']
+        
+        insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = '';")
+    return render_template('insert_dokter.html')

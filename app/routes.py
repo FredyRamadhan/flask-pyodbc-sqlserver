@@ -134,8 +134,32 @@ def delete_pasien(id_pasien):
 #PEMERIKSAAN
 @routes.route('/pemeriksaan')
 def table_pemeriksaan():
-    table = select("select * from pemeriksaan order by id_pemeriksaan")
+    table = select("select * from pemeriksaan order by id_periksa")
     return render_template('table_pemeriksaan.html', table=table)
+@routes.route('/pemeriksaan/filter/<filter_by>')
+def filter_pemeriksaan(filter_by):
+    if filter_by == 'umum':
+        table = select('''
+        select * from pemeriksaan p 
+        join dokter d
+        on p.id_dokter = d.id = dokter
+        where d.spesialisasi = 'umum' ''')
+    elif filter_by == 'gigi':
+        table = select('''
+        select * from pemeriksaan p 
+        join dokter d
+        on p.id_dokter = d.id = dokter
+        where d.spesialisasi = 'gigi' ''')
+    elif filter_by == 'anak':
+        table = select('''
+        select * from pemeriksaan p 
+        join dokter d
+        on p.id_dokter = d.id = dokter
+        where d.spesialisasi = 'anak' ''')
+
+    return render_template('table_pemeriksaan.html', table=table)
+
+
 
 @routes.route('/pemeriksaan/create', methods=['GET', 'POST'])
 def create_pemeriksaan():

@@ -9,7 +9,16 @@ Tabel Pemeriksaan
     <section class="mt-[5vh]">
         <div class="flex justify-between max-w-5xl w-full mx-auto">
             <a class="p-2 bg-accent text-whites rounded-md" href="/pemeriksaan/create">Tambahkan Data</a>
-            <a class="p-2 bg-accent text-whites rounded-md" href="/pemeriksaan/by_spesialisasi">Tes Filter Spesialisasi</a>
+            
+            <!-- Dropdown Filter for Spesialisasi -->
+            <div class="relative inline-block">
+                <button class="p-2 bg-accent text-whites rounded-md" id="filterBtn">Filter</button>
+                <div id="filterDropdown" class="absolute left-0 hidden bg-white shadow-lg border mt-2 w-40">
+                    <a href="/pemeriksaan/filter/{{ umum }}" class="block px-4 py-2 text-black">Umum</a>
+                    <a href="/pemeriksaan/filter/{{ gigi }}" class="block px-4 py-2 text-black">Gigi</a>
+                    <a href="/pemeriksaan/filter/{{ anak }}" class="block px-4 py-2 text-black">Anak 3</a>
+                </div>
+            </div>
         </div>
     </section>
 

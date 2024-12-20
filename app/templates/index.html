@@ -79,11 +79,11 @@
                     <ul id="sidebarDropdownMenu" class="ml-6 space-y-4 mt-2 hidden">
                         <li><a href="/dokter" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Dokter</a></li>
                         <li><a href="/pasien" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Pasien</a></li>
-                        <li><a href="/ruangan" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Ruangan</a></li>
-                        <li><a href="/obat" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Obat</a></li>
+                        <li><a href="/pemeriksaan" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Pemeriksaan</a></li>
                         <li><a href="/resep" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Resep</a></li>
                         <li><a href="/admin" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Petugas</a></li>
-                        <li><a href="/pemeriksaan" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Pemeriksaan</a></li>
+                        <li><a href="/ruangan" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Ruangan</a></li>
+                        <li><a href="/obat" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Obat</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,6 +101,18 @@
 
 </body>
 <script>
+    document.getElementById('filterBtn').addEventListener('click', function () {
+        const dropdown = document.getElementById('filterDropdown');
+        dropdown.classList.toggle('hidden');
+    });
+
+    window.addEventListener('click', function (event) {
+        const dropdown = document.getElementById('filterDropdown');
+        if (!event.target.closest('#filterBtn') && !event.target.closest('#filterDropdown')) {
+            dropdown.classList.add('hidden');
+        }
+    });
+
     function toggleSidebarDropdown() {
         const dropdown = document.getElementById('sidebarDropdownMenu');
         dropdown.classList.toggle('hidden');

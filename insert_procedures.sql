@@ -5,9 +5,21 @@ USE KLINIK
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Anwar', @spesialisasi = 'Umum', @telp_dokter = '081234567890', @jadwal_praktik = 'Senin';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Budi', @spesialisasi = 'Anak', @telp_dokter = '082345678901', @jadwal_praktik = 'Selasa';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Citra', @spesialisasi = 'THT', @telp_dokter = '083456789012', @jadwal_praktik = 'Rabu';
-EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Dira', @spesialisasi = 'Kandungan', @telp_dokter = '084567890123', @jadwal_praktik = 'Kamis';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Dina', @spesialisasi = 'Anak', @telp_dokter = '084567890123', @jadwal_praktik = 'Kamis';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Eko', @spesialisasi = 'Gigi', @telp_dokter = '085678901234', @jadwal_praktik = 'Jumat';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Farah', @spesialisasi = 'Umum', @telp_dokter = '086789012345', @jadwal_praktik = 'Sabtu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Guntur', @spesialisasi = 'Gigi', @telp_dokter = '087890123456', @jadwal_praktik = 'Minggu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Hana', @spesialisasi = 'THT', @telp_dokter = '088901234567', @jadwal_praktik = 'Senin';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Ivan', @spesialisasi = 'Kandungan', @telp_dokter = '089012345678', @jadwal_praktik = 'Selasa';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Joko', @spesialisasi = 'Kandungan', @telp_dokter = '089123456789', @jadwal_praktik = 'Rabu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Karin', @spesialisasi = 'Gigi', @telp_dokter = '089234567890', @jadwal_praktik = 'Kamis';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Lisa', @spesialisasi = 'Umum', @telp_dokter = '089345678901', @jadwal_praktik = 'Jumat';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Miko', @spesialisasi = 'Kandungan', @telp_dokter = '089456789012', @jadwal_praktik = 'Sabtu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Nita', @spesialisasi = 'Anak', @telp_dokter = '089567890123', @jadwal_praktik = 'Minggu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Oki', @spesialisasi = 'THT', @telp_dokter = '089678901234', @jadwal_praktik = 'Senin';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Java', @spesialisasi = 'Mata', @telp_dokter = '081236547896', @jadwal_praktik = 'Sabtu';
+EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Bunga', @spesialisasi = 'Penyakit Dalam', @telp_dokter = '082134956847', @jadwal_praktik = 'Selasa';
+
 SELECT * FROM DOKTER
 
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';

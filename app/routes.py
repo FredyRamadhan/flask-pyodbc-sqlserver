@@ -6,7 +6,7 @@ routes = Blueprint('routes', __name__)
 
 @routes.route('/')
 def index():
-    return render_template('home.html')
+    return render_template('dashboard.html')
 
 @routes.route('/dokter')
 def dokter():
@@ -64,26 +64,6 @@ def delete_continent(id_dokter):
             conn.close()
     else:
         flash('Error: Unable to connect to the database.', 'danger')
-    
-    return redirect(url_for('routes.dokter'))
-
-@routes.route('/dokter/spesialisasi', methods=['POST'])
-def filter():
-    column = request.form['kolom_filter']
-    conn = create_connection()
-    if conn:
-        cursor = conn.cursor()
-        try:
-            cursor.execute('SELECT * FROM dokter WHERE spesialisasi = ?', (column,))
-            conn.commit()
-            flash('Filter applied based on spesialisasi')
-        except Exception as e:
-            flash(f'Error: {str(e)}', 'danger')
-        finally:
-            cursor.close()
-            conn.close()
-    else:
-        flash('Error: Unable to connect to the database', 'danger')
     
     return redirect(url_for('routes.dokter'))
 

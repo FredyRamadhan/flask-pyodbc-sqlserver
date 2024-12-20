@@ -43,12 +43,21 @@
                 <div class="h-16 bg-accent flex items-center justify-center text-xl">
                     Dashboard
                 </div>
-                <ul class="space-y-4 mt-6 px-4">
-                    <li><a href="/" class="block py-2 px-3 rounded hover:bg-accent_dark">Home</a></li>
-                    <li><a href="/dokter" class="block py-2 px-3 rounded hover:bg-accent_dark">Tables</a></li>
-                    <li><a href="/dokter/create" class="block py-2 px-3 rounded hover:bg-accent_dark">Update</a></li>
-                    <li><a href="#" class="block py-2 px-3 rounded hover:bg-accent_dark">Other</a></li>
-                </ul>
+                <div class="p-2">
+                    <a href="/" class="block hover:bg-accent pl-6 py-2 mt-1 rounded">Home</a>
+                </div>
+                <div class="p-2">
+                    <button class="pl-6 w-full text-left p-2 rounded hover:bg-accent focus:outline-none" onclick="toggleSidebarDropdown()">
+                        View Table
+                    </button>
+                    <ul id="sidebarDropdownMenu" class="ml-6 space-y-4 mt-2 hidden">
+                        <li><a href="/dokter" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Dokter</a></li>
+                        <li><a href="/pasien" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Pasien</a></li>
+                        <li><a href="/ruangan" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Ruangan</a></li>
+                        <li><a href="/obat" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Obat</a></li>
+                        <li><a href="/resep" class="block hover:bg-accent pl-4 py-2 mt-1 rounded">Resep</a></li>
+                    </ul>
+                </div>
             </div>
 
             <!-- Main Content Area -->
@@ -61,4 +70,10 @@
     </div> <!-- Main Container -->
 
 </body>
+<script>
+    function toggleSidebarDropdown() {
+        const dropdown = document.getElementById('sidebarDropdownMenu');
+        dropdown.classList.toggle('hidden');
+    }
+</script>
 </html>

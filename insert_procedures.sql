@@ -29,21 +29,21 @@ EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @tel
 -- EXECUTE PROCEDURE INSERT PASIEN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '', @keluhan = '', @jenis_kelamin = '', @tanggal_lahir = '', @alamat = '', @no_hp = '', @id_petugas = '';
 
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = ''; -- Dokter Anak
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Siti', @keluhan = 'Sakit tenggorokan', @jenis_kelamin = 'P', @tanggal_lahir = '1992-05-15', @alamat = 'Jl. Mawar No. 3', @no_hp = '081234567891', @id_petugas = ''; -- Dokter THT
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dewi', @keluhan = 'Nyeri saat hamil', @jenis_kelamin = 'P', @tanggal_lahir = '1989-10-22', @alamat = 'Jl. Anggrek No. 7', @no_hp = '081234567892', @id_petugas = ''; -- Dokter Kandungan
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Budi', @keluhan = 'Gigi berlubang', @jenis_kelamin = 'L', @tanggal_lahir = '2000-08-08', @alamat = 'Jl. Tulip No. 12', @no_hp = '081234567893', @id_petugas = ''; -- Dokter Gigi
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rina', @keluhan = 'Pusing dan flu', @jenis_kelamin = 'P', @tanggal_lahir = '1975-01-13', @alamat = 'Jl. Kenanga No. 10', @no_hp = '081234567894', @id_petugas = ''; -- Dokter Umum
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Joko', @keluhan = 'Batuk berdahak', @jenis_kelamin = 'L', @tanggal_lahir = '1985-03-18', @alamat = 'Jl. Dahlia No. 9', @no_hp = '081234567895', @id_petugas = ''; -- Dokter Umum
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rudi', @keluhan = 'Demam dan diare', @jenis_kelamin = 'L', @tanggal_lahir = '1990-04-12', @alamat = 'Jl. Sakura No. 11', @no_hp = '081234567896', @id_petugas = ''; -- Dokter Umum
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Lina', @keluhan = 'Gigi bengkak', @jenis_kelamin = 'P', @tanggal_lahir = '1995-09-29', @alamat = 'Jl. Teratai No. 4', @no_hp = '081234567897', @id_petugas = ''; -- Dokter Gigi
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Tina', @keluhan = 'Sesak nafas', @jenis_kelamin = 'P', @tanggal_lahir = '2001-06-06', @alamat = 'Jl. Bakung No. 2', @no_hp = '081234567898', @id_petugas = ''; -- Dokter THT
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Ahmad', @keluhan = 'Cacar air', @jenis_kelamin = 'L', @tanggal_lahir = '2012-11-02', @alamat = 'Jl. Kamboja No. 14', @no_hp = '081234567899', @id_petugas = ''; -- Dokter Anak
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fajar', @keluhan = 'Nyeri dada', @jenis_kelamin = 'L', @tanggal_lahir = '1983-07-30', @alamat = 'Jl. Cemara No. 6', @no_hp = '081234567800', @id_petugas = ''; -- Dokter Umum
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Nisa', @keluhan = 'Sakit gigi', @jenis_kelamin = 'P', @tanggal_lahir = '1997-12-25', @alamat = 'Jl. Flamboyan No. 1', @no_hp = '081234567801', @id_petugas = ''; -- Dokter Gigi
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Bayu', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2008-09-14', @alamat = 'Jl. Nusa Indah No. 2', @no_hp = '081234567802', @id_petugas = ''; -- Dokter Anak
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fitri', @keluhan = 'Pusing terus-menerus', @jenis_kelamin = 'P', @tanggal_lahir = '1978-11-08', @alamat = 'Jl. Cempaka No. 8', @no_hp = '081234567803', @id_petugas = ''; -- Dokter Umum
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gusi', @jenis_kelamin = 'P', @tanggal_lahir = '1994-04-19', @alamat = 'Jl. Teratai Putih No. 10', @no_hp = '081234567804', @id_petugas = ''; -- Dokter Gigi
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Siti', @keluhan = 'Sakit tenggorokan', @jenis_kelamin = 'P', @tanggal_lahir = '1992-05-15', @alamat = 'Jl. Mawar No. 3', @no_hp = '081234567891', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dewi', @keluhan = 'Nyeri saat hamil', @jenis_kelamin = 'P', @tanggal_lahir = '1989-10-22', @alamat = 'Jl. Anggrek No. 7', @no_hp = '081234567892', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Budi', @keluhan = 'Gigi berlubang', @jenis_kelamin = 'L', @tanggal_lahir = '2000-08-08', @alamat = 'Jl. Tulip No. 12', @no_hp = '081234567893', @id_petugas = '';
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rina', @keluhan = 'Pusing dan flu', @jenis_kelamin = 'P', @tanggal_lahir = '1975-01-13', @alamat = 'Jl. Kenanga No. 10', @no_hp = '081234567894', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Joko', @keluhan = 'Batuk berdahak', @jenis_kelamin = 'L', @tanggal_lahir = '1985-03-18', @alamat = 'Jl. Dahlia No. 9', @no_hp = '081234567895', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rudi', @keluhan = 'Demam dan diare', @jenis_kelamin = 'L', @tanggal_lahir = '1990-04-12', @alamat = 'Jl. Sakura No. 11', @no_hp = '081234567896', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Lina', @keluhan = 'Gigi bengkak', @jenis_kelamin = 'P', @tanggal_lahir = '1995-09-29', @alamat = 'Jl. Teratai No. 4', @no_hp = '081234567897', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Tina', @keluhan = 'Sesak nafas', @jenis_kelamin = 'P', @tanggal_lahir = '2001-06-06', @alamat = 'Jl. Bakung No. 2', @no_hp = '081234567898', @id_petugas = '';
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Ahmad', @keluhan = 'Cacar air', @jenis_kelamin = 'L', @tanggal_lahir = '2012-11-02', @alamat = 'Jl. Kamboja No. 14', @no_hp = '081234567899', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fajar', @keluhan = 'Nyeri dada', @jenis_kelamin = 'L', @tanggal_lahir = '1983-07-30', @alamat = 'Jl. Cemara No. 6', @no_hp = '081234567800', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Nisa', @keluhan = 'Sakit gigi', @jenis_kelamin = 'P', @tanggal_lahir = '1997-12-25', @alamat = 'Jl. Flamboyan No. 1', @no_hp = '081234567801', @id_petugas = '';
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Bayu', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2008-09-14', @alamat = 'Jl. Nusa Indah No. 2', @no_hp = '081234567802', @id_petugas = ''; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fitri', @keluhan = 'Pusing terus-menerus', @jenis_kelamin = 'P', @tanggal_lahir = '1978-11-08', @alamat = 'Jl. Cempaka No. 8', @no_hp = '081234567803', @id_petugas = '';
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gusi', @jenis_kelamin = 'P', @tanggal_lahir = '1994-04-19', @alamat = 'Jl. Teratai Putih No. 10', @no_hp = '081234567804', @id_petugas = ''; 
 
 
 -- EXECUTE PROCEDURE INSERT PEMERIKSAAN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
@@ -73,21 +73,21 @@ EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_15'
 EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
 
 -- Data Resep
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_1', @id_pasien = 'PAS_1', @id_dokter = 'DOK_2'; -- Demam berdarah
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_2', @id_pasien = 'PAS_2', @id_dokter = 'DOK_3'; -- Radang tenggorokan
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_3', @id_pasien = 'PAS_3', @id_dokter = 'DOK_4'; -- Kehamilan bermasalah
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_4', @id_pasien = 'PAS_4', @id_dokter = 'DOK_6'; -- Karies gigi
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_5', @id_pasien = 'PAS_5', @id_dokter = 'DOK_1'; -- Influenza
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_6', @id_pasien = 'PAS_6', @id_dokter = 'DOK_1'; -- Bronkitis ringan
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_7', @id_pasien = 'PAS_7', @id_dokter = 'DOK_1'; -- Gastroenteritis
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_8', @id_pasien = 'PAS_8', @id_dokter = 'DOK_6'; -- Abses periodontal
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_9', @id_pasien = 'PAS_9', @id_dokter = 'DOK_3'; -- Asma akut
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_10', @id_pasien = 'PAS_10', @id_dokter = 'DOK_2'; -- Varisela
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_11', @id_pasien = 'PAS_11', @id_dokter = 'DOK_1'; -- Angina pectoris
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_12', @id_pasien = 'PAS_12', @id_dokter = 'DOK_6'; -- Pulpitis
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_13', @id_pasien = 'PAS_13', @id_dokter = 'DOK_2'; -- Demam tinggi tanpa komplikasi
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_14', @id_pasien = 'PAS_14', @id_dokter = 'DOK_1'; -- Vertigo
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_15', @id_pasien = 'PAS_15', @id_dokter = 'DOK_6'; -- Gingivitis
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_1', @id_pasien = 'PAS_1', @id_dokter = 'DOK_2'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_2', @id_pasien = 'PAS_2', @id_dokter = 'DOK_3';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_3', @id_pasien = 'PAS_3', @id_dokter = 'DOK_4'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_4', @id_pasien = 'PAS_4', @id_dokter = 'DOK_6'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_5', @id_pasien = 'PAS_5', @id_dokter = 'DOK_1'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_6', @id_pasien = 'PAS_6', @id_dokter = 'DOK_1'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_7', @id_pasien = 'PAS_7', @id_dokter = 'DOK_1'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_8', @id_pasien = 'PAS_8', @id_dokter = 'DOK_6'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_9', @id_pasien = 'PAS_9', @id_dokter = 'DOK_3'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_10', @id_pasien = 'PAS_10', @id_dokter = 'DOK_2'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_11', @id_pasien = 'PAS_11', @id_dokter = 'DOK_1'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_12', @id_pasien = 'PAS_12', @id_dokter = 'DOK_6'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_13', @id_pasien = 'PAS_13', @id_dokter = 'DOK_2'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_14', @id_pasien = 'PAS_14', @id_dokter = 'DOK_1'; 
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_15', @id_pasien = 'PAS_15', @id_dokter = 'DOK_6'; 
 
 
 

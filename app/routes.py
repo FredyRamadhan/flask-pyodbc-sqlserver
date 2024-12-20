@@ -7,7 +7,30 @@ routes = Blueprint('routes', __name__)
 # ROUTE DASHBOARD
 @routes.route('/')
 def index():
-    return render_template('dashboard.html')
+    conn = create_connection()
+    if conn:
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT TOP 1 nama_obat, stok 
+            FROM obat
+            ORDER BY stok DESC;
+        ''')
+        stokObat = cursor.fetchone()  # Get the first row as a tuple
+
+        cursor.execute('''
+            SELECT count(id_dokter) as jumlah
+            FROM dokter
+            where spesialisasi = 'umum'
+        ''')
+        dokerUmum = cursor.fetchone()
+
+        cursor.close()
+        conn.close()
+        return render_template('dashboard.html', stokObat=stokObat, dokterUmum = dokerUmum)
+    else:
+        return render_template('dashboard.html', stokObat=None)
+
+
 
 
 # ROUTE UNTUK CRUD DOKTER

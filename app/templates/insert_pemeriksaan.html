@@ -1,0 +1,92 @@
+{% extends "index.html" %}
+
+{% block title %}Update Data Pemeriksaan{% endblock %}
+
+{% block content %}
+<main class="px-6 py-4">
+    <div class="md:max-w-[1200px] mx-auto">
+        
+        <section class="mt-[2vh]">
+            <div class="flex justify-center py-4 text-accent font-bold text-3xl">
+                <p>Create Data Pemeriksaan</p>
+            </div>
+        </section>
+
+        <section class="mt-[2vh]">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="mb-4">
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+        </section>
+
+        <section class="mt-[5vh]">
+            <form action="/pemeriksaan/create/commit" method="POST">
+                <div class="flex flex-col p-4 gap-4 border-2 border-accent">
+
+                    <!-- ID Dokter -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_dokter">ID Dokter</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_dokter" id="id_dokter">
+                            {% for A in option_dokter %}
+                            <option value="{{ A.id_dokter }}">{{ A.nama_dokter }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- ID Pasien -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_pasien">ID Pasien</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_pasien" id="id_pasien">
+                            {% for B in option_pasien %}
+                            <option value="{{ B.id_pasien }}">{{ B.nama_pasien }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- ID Ruangan -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_ruangan">ID Ruangan</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_ruangan" id="id_ruangan">
+                            {% for C in option_ruangan %}
+                            <option value="{{ C.id_ruangan }}">{{ C.nama_ruangan }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- Tanggal Pemeriksaan -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="tanggal_periksa">Tanggal Pemeriksaan</label>
+                        <input type="text" placeholder="Tanggal periksa yyyy-mm-dd" id="tanggal_periksa" name="tanggal_periksa" class="border-2 border-gray-500 w-[80%] p-2">
+                    </div>
+
+                    <!-- Diagnosa -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="diagnosa">Diagnosa</label>
+                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Diagnosa" type="text" name="diagnosa" id="diagnosa">
+                    </div>
+
+                    <!-- Biaya -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="biaya">Biaya</label>
+                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Biaya" type="number" step="0.01" name="biaya" id="biaya">
+                    </div>
+
+                    <div class="flex justify-end gap-6 p-4">
+                        <a href="{{ url_for('routes.table_pemeriksaan') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
+                        <button type="submit" class="px-8 py-3 bg-accent text-whites">Update</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </section>
+    </div>
+</main>
+{% endblock %}

@@ -20,10 +20,6 @@ EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Oki', @spesialisasi = 'THT'
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Java', @spesialisasi = 'Mata', @telp_dokter = '081236547896', @jadwal_praktik = 'Sabtu';
 EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Bunga', @spesialisasi = 'Penyakit Dalam', @telp_dokter = '082134956847', @jadwal_praktik = 'Selasa';
 
-SELECT * FROM DOKTER
-
-EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
-EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '', @spesialisasi = '', @telp_dokter = '', @jadwal_praktik = '';
 
 
 -- EXECUTE PROCEDURE INSERT PASIEN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
@@ -46,9 +42,6 @@ EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Fitri', @keluhan = 'Pusing 
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gusi', @jenis_kelamin = 'P', @tanggal_lahir = '1994-04-19', @alamat = 'Jl. Teratai Putih No. 10', @no_hp = '081234567804', @id_petugas = ''; 
 
 
--- EXECUTE PROCEDURE INSERT PEMERIKSAAN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
-EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = '', @id_pasien = '', @id_ruangan = '', @tanggal_periksa = '', @diagnosa = '', @biaya = ;
-
 -- Data Pemeriksaan Klinik
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_2', @id_pasien = 'PAS_1', @id_ruangan = 'R001', @tanggal_periksa = '2024-12-20', @diagnosa = 'Demam berdarah', @biaya = 200000;
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_3', @id_pasien = 'PAS_2', @id_ruangan = 'R002', @tanggal_periksa = '2024-12-20', @diagnosa = 'Radang tenggorokan', @biaya = 150000;
@@ -66,11 +59,6 @@ EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_2', @id_pasien = 'PAS_13'
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_14', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Vertigo', @biaya = 180000;
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_15', @id_ruangan = 'R004', @tanggal_periksa = '2024-12-20', @diagnosa = 'Gingivitis', @biaya = 120000;
 
-
-
-
--- EXECUTE PROCEDURE INSERT RESEP, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
 
 -- Data Resep
 EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_1', @id_pasien = 'PAS_1', @id_dokter = 'DOK_2'; 

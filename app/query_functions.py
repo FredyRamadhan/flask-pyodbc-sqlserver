@@ -17,6 +17,23 @@ def create(table_name, column, data):
         conn.close()
         return None
 
+
+def insert_dokter(nama_dokter, spesialisasi, telp_dokter, jadwal_praktik):
+    conn = create_connection()
+    if conn:
+        try:
+            cursor = conn.cursor()
+            cursor.execute("EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = '?', @spesialisasi = '?', @telp_dokter = '?', @jadwal_praktik = '?';", (nama_dokter, spesialisasi, telp_dokter, jadwal_praktik))
+        except Exception as e:
+            flash(f'Error: {str(e)}', 'danger')
+        finally:
+            cursor.close()
+            conn.close()
+    else:
+        cursor.close()
+        conn.close()
+        return None
+
 def select(query):
     conn = create_connection()
     if conn:

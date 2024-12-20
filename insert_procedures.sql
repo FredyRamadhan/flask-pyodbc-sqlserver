@@ -49,6 +49,24 @@ EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gu
 -- EXECUTE PROCEDURE INSERT PEMERIKSAAN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = '', @id_pasien = '', @id_ruangan = '', @tanggal_periksa = '', @diagnosa = '', @biaya = ;
 
+-- Data Pemeriksaan Klinik
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_2', @id_pasien = 'PAS_1', @id_ruangan = 'R001', @tanggal_periksa = '2024-12-20', @diagnosa = 'Demam berdarah', @biaya = 200000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_3', @id_pasien = 'PAS_2', @id_ruangan = 'R002', @tanggal_periksa = '2024-12-20', @diagnosa = 'Radang tenggorokan', @biaya = 150000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_4', @id_pasien = 'PAS_3', @id_ruangan = 'R003', @tanggal_periksa = '2024-12-20', @diagnosa = 'Kehamilan bermasalah', @biaya = 300000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_4', @id_ruangan = 'R004', @tanggal_periksa = '2024-12-20', @diagnosa = 'Karies gigi', @biaya = 100000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_5', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Influenza', @biaya = 150000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_6', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Bronkitis ringan', @biaya = 180000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_7', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Gastroenteritis', @biaya = 200000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_8', @id_ruangan = 'R004', @tanggal_periksa = '2024-12-20', @diagnosa = 'Abses periodontal', @biaya = 120000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_3', @id_pasien = 'PAS_9', @id_ruangan = 'R002', @tanggal_periksa = '2024-12-20', @diagnosa = 'Asma akut', @biaya = 250000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_2', @id_pasien = 'PAS_10', @id_ruangan = 'R001', @tanggal_periksa = '2024-12-20', @diagnosa = 'Varisela', @biaya = 150000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_11', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Angina pectoris', @biaya = 300000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_12', @id_ruangan = 'R004', @tanggal_periksa = '2024-12-20', @diagnosa = 'Pulpitis', @biaya = 100000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_2', @id_pasien = 'PAS_13', @id_ruangan = 'R001', @tanggal_periksa = '2024-12-20', @diagnosa = 'Demam tinggi tanpa komplikasi', @biaya = 200000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_1', @id_pasien = 'PAS_14', @id_ruangan = 'R005', @tanggal_periksa = '2024-12-20', @diagnosa = 'Vertigo', @biaya = 180000;
+EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_15', @id_ruangan = 'R004', @tanggal_periksa = '2024-12-20', @diagnosa = 'Gingivitis', @biaya = 120000;
+
+
 
 -- EXECUTE PROCEDURE INSERT RESEP, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';

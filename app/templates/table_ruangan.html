@@ -34,8 +34,8 @@ Tabel Ruangan
                     <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.nama_ruangan }}</td>
                     <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">
                         <div class="inline-flex gap-2 justify-between text-white text-sm">
-                            <a href="/ruangan/update/{{ A.id_dokter }}" class="p-2 px-4 bg-accent">Update</a>
-                            <form action="/ruangan/delete/{{ A.id_dokter }}" method="POST">
+                            <a href="/ruangan/update/{{ A.id_ruangan }}" class="p-2 px-4 bg-accent">Update</a>
+                            <form action="/ruangan/delete/{{ A.id_ruangan }}" method="POST">
                                 <button type="submit" class="p-2 px-4 bg-red-800" onclick="return confirm('Are you sure you want to delete this room?');">Delete</button>
                             </form>
                         </div>

@@ -122,22 +122,47 @@ EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter 
 
 */
 -- EXECUTE PROCEDURE INSERT OBAT, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = '', @harga = '', @stok = '', @jenis = '';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = '', @harga = '', @stok = '', @jenis = '';
 
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Cetirizine', @harga = '10000', @stok = '100', @jenis = 'Antihistamin';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Loratadine', @harga = '15000', @stok = '80', @jenis = 'Antihistamin';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Chlorpheniramine', @harga = '20000', @stok = '50', @jenis = 'Antihistamin';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Amoxicillin', @harga = '12000', @stok = '60', @jenis = 'Antibiotik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Ciprofloxacin', @harga = '25000', @stok = '40', @jenis = 'Antibiotik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Azithromycin', @harga = '30000', @stok = '70', @jenis = 'Antibiotik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Doxycycline', @harga = '35000', @stok = '90', @jenis = 'Antibiotik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Paracetamol', @harga = '40000', @stok = '30', @jenis = 'Analgesik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Ibuprofen', @harga = '18000', @stok = '75', @jenis = 'Analgesik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Dexamethasone', @harga = '50000', @stok = '20', @jenis = 'Analgesik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Paracetamol Sirup', @harga = '15000', @stok = '100', @jenis = 'Analgesik';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Amlodipine', @harga = '45000', @stok = '50', @jenis = 'Antihipertensi';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Furosemide', @harga = '35000', @stok = '30', @jenis = 'Antihipertensi';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Captropil', @harga = '22000', @stok = '80', @jenis = 'Antihipertensi';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Losartan', @harga = '12000', @stok = '200', @jenis = 'Antihipertensi';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Tetrachloride', @harga = '20000', @stok = '80', @jenis = 'Tetes Mata Antioksidan';
-EXEC INSERT_RES @id_prefix = 'OB_', @nama_obat = 'Doen Suspension', @harga = '10000', @stok = '200', @jenis = 'Antasida';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Cetirizine', @harga = '10000', @stok = '100', @jenis = 'Antihistamin';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Loratadine', @harga = '15000', @stok = '80', @jenis = 'Antihistamin';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Chlorpheniramine', @harga = '20000', @stok = '50', @jenis = 'Antihistamin';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Amoxicillin', @harga = '12000', @stok = '60', @jenis = 'Antibiotik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Ciprofloxacin', @harga = '25000', @stok = '40', @jenis = 'Antibiotik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Azithromycin', @harga = '30000', @stok = '70', @jenis = 'Antibiotik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Doxycycline', @harga = '35000', @stok = '90', @jenis = 'Antibiotik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Paracetamol', @harga = '40000', @stok = '30', @jenis = 'Analgesik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Ibuprofen', @harga = '18000', @stok = '75', @jenis = 'Analgesik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Dexamethasone', @harga = '50000', @stok = '20', @jenis = 'Analgesik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Paracetamol Sirup', @harga = '15000', @stok = '100', @jenis = 'Analgesik';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Amlodipine', @harga = '45000', @stok = '50', @jenis = 'Antihipertensi';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Furosemide', @harga = '35000', @stok = '30', @jenis = 'Antihipertensi';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Captropil', @harga = '22000', @stok = '80', @jenis = 'Antihipertensi';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Losartan', @harga = '12000', @stok = '200', @jenis = 'Antihipertensi';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Tetrachloride', @harga = '20000', @stok = '80', @jenis = 'Tetes Mata Antioksidan';
+EXEC INSERT_OB @id_prefix = 'OB_', @nama_obat = 'Doen Suspension', @harga = '10000', @stok = '200', @jenis = 'Antasida';
+
+-- EXECUTE PROCEDURE INSERT PETUGAS ADMIN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = '';
+
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Rini Widya';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Bagas Santoso';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Siti Lestari';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Adi Wijaya';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Lina Sari';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Andi Saputra';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Maya Putri';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Heri Kurniawan';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Fitri Handayani';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Dedi Susanto';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Ratna Dewi';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Yudi Firmansyah';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Rika Murni';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Sandi Pratama';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Rita Amalia';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Zaky Arya';
+EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Fara Anna';
+
+
+
+

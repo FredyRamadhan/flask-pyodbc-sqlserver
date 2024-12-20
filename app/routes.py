@@ -102,3 +102,8 @@ def table_pemeriksaan():
 def table_resep():
     table = select("select * from resep order by id_resep")
     return render_template('table_resep.html', table=table)
+
+@routes.route('/admin')
+def table_admin():
+    table = select("select * from petugas_admin order by id_petugas")
+    return render_template('table_admin.html', table=table)

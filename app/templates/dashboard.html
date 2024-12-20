@@ -13,8 +13,10 @@ Dashboard
             {% if stokObat %}
             <div class="bg-whites p-4 shadow-lg rounded-lg">
                 <h3 class="text-xl font-medium text-dark">Obat dengan Stok Terbanyak</h3>
-                <p class="text-dark">{{ stokObat[0] }}</p>  <!-- nama_obat -->
-                <p class="text-dark">{{ stokObat[1] }}</p>  <!-- stok -->
+                <div class="flex">
+                    <p class="text-dark">{{ stokObat[0] }}</p>  <!-- nama_obat -->
+                    <p class="text-dark">{{ stokObat[1] }}</p>  <!-- stok -->
+                </div>
             </div>
             {% else %}
             <p class="text-dark">Tidak ada data obat</p>
@@ -23,7 +25,7 @@ Dashboard
             {% if dokterUmum %}
             <div class="bg-whites p-4 shadow-lg rounded-lg">
                 <h3 class="text-xl font-medium text-dark">Obat dengan Stok Terbanyak</h3>
-                <p class="text-dark">{{ dokterUmum }}</p>  <!-- nama_obat -->
+                <p class="text-dark">{{ dokterUmum.jumlah }}</p>  <!-- nama_obat -->
             </div>
             {% endif %}
             

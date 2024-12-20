@@ -22,11 +22,12 @@ def index():
             FROM dokter
             where spesialisasi = 'umum'
         ''')
-        dokerUmum = cursor.fetchone()
+        dokterUmum = cursor.fetchone()
 
         cursor.close()
         conn.close()
-        return render_template('dashboard.html', stokObat=stokObat, dokterUmum = dokerUmum)
+        print(dokterUmum)
+        return render_template('dashboard.html', stokObat=stokObat, dokterUmum = dokterUmum)
     else:
         return render_template('dashboard.html', stokObat=None)
 

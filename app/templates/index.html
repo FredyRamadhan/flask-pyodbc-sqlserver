@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Dashboard{% endblock %} : : Klinik Sehat</title>
+    <title>{% block title %}{% endblock %} : : Klinik Sehat</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -31,14 +31,14 @@
             <div class="flex justify-between items-center">
                 <div class="text-xl font-semibold">Dashboard</div>
                 <div class="space-x-4">
-                    <button class="text-whites hover:bg-accent px-3 py-2 rounded">Logout</button>
+                    <button class="text-whites hover:bg-accent px-3 py-2 rounded">asdfasdf</button>
                 </div>
             </div>
         </div>
 
         <!-- Sidebar and Main Content Container -->
         <div class="flex flex-1 mt-[80px]">
-            <!-- Sidebar (Fixed) -->
+            <!-- Sidebar -->
             <div class="bg-accent_dark w-60 text-whites fixed inset-y-0 left-0 z-20 mt-[80px]">
                 <div class="h-16 bg-accent flex items-center justify-center text-xl">
                     Dashboard
@@ -51,14 +51,14 @@
                 </ul>
             </div>
 
-            <!-- Main Content Area (flex container) -->
+            <!-- Main Content Area -->
             <div class="flex-1 ml-[240px] p-4">
                 {% block content %}
                 {% endblock %}
-            </div> <!-- End of Main Content Area -->
-        </div> <!-- End of Sidebar and Main Content Container -->
+            </div> <!--  Main Content Area -->
+        </div> <!--  Sidebar and Main Content Container -->
 
-    </div> <!-- End of Main Container -->
+    </div> <!-- Main Container -->
 
 </body>
 </html>

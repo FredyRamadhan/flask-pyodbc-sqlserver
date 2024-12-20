@@ -72,23 +72,23 @@ EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_15'
 -- EXECUTE PROCEDURE INSERT RESEP, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
 
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
-EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+-- Data Resep
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_1', @id_pasien = 'PAS_1', @id_dokter = 'DOK_2'; -- Demam berdarah
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_2', @id_pasien = 'PAS_2', @id_dokter = 'DOK_3'; -- Radang tenggorokan
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_3', @id_pasien = 'PAS_3', @id_dokter = 'DOK_4'; -- Kehamilan bermasalah
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_4', @id_pasien = 'PAS_4', @id_dokter = 'DOK_6'; -- Karies gigi
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_5', @id_pasien = 'PAS_5', @id_dokter = 'DOK_1'; -- Influenza
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_6', @id_pasien = 'PAS_6', @id_dokter = 'DOK_1'; -- Bronkitis ringan
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_7', @id_pasien = 'PAS_7', @id_dokter = 'DOK_1'; -- Gastroenteritis
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_8', @id_pasien = 'PAS_8', @id_dokter = 'DOK_6'; -- Abses periodontal
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_9', @id_pasien = 'PAS_9', @id_dokter = 'DOK_3'; -- Asma akut
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_10', @id_pasien = 'PAS_10', @id_dokter = 'DOK_2'; -- Varisela
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_11', @id_pasien = 'PAS_11', @id_dokter = 'DOK_1'; -- Angina pectoris
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_12', @id_pasien = 'PAS_12', @id_dokter = 'DOK_6'; -- Pulpitis
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_13', @id_pasien = 'PAS_13', @id_dokter = 'DOK_2'; -- Demam tinggi tanpa komplikasi
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_14', @id_pasien = 'PAS_14', @id_dokter = 'DOK_1'; -- Vertigo
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = 'OBT_15', @id_pasien = 'PAS_15', @id_dokter = 'DOK_6'; -- Gingivitis
+
 
 
 

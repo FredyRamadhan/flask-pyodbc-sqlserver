@@ -35,16 +35,12 @@ def dokter_by_sp():
 @routes.route('/dokter/create', methods=['GET', 'POST'])
 def create_dokter():
     if request.method == 'POST':
-        id_dokter = request.form['id_dokter']
         nama_dokter = request.form['nama_dokter']
         spesialisasi = request.form['spesialisasi']
         telp_dokter = request.form['telp_dokter']
         jadwal_praktik = request.form['jadwal_praktik']
         
-        data = "'" + "', '".join([id_dokter, nama_dokter, spesialisasi, telp_dokter, jadwal_praktik]) + "'"
-        columns = ", ".join(['id_dokter', 'nama_dokter', 'spesialisasi', 'telp_dokter', 'jadwal_praktik'])
-
-        create('dokter', columns, data)
+        def insert_dokter(nama_dokter, spesialisasi, telp_dokter, jadwal_praktik)
     return render_template('insert_dokter.html')
 
 

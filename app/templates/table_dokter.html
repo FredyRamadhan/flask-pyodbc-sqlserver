@@ -5,12 +5,10 @@ Tabel Dokter
 {% endblock %}
 
 {% block content %}
-    <!-- Page-specific content goes here -->
     <section class="mt-[5vh] text-2xl text-center font-bold">
         <p>Daftar Dokter di Klinik Kelompok 4</p>
     </section>
 
-    <!-- Action Buttons (Add Data & Filter by Spesialisasi) -->
     <section class="mt-[5vh]">
         <div class="flex justify-between max-w-5xl w-full mx-auto">
             <a class="p-2 bg-accent text-whites rounded-md" href="/dokter/create">Tambahkan Data</a>
@@ -19,7 +17,7 @@ Tabel Dokter
     </section>
 
     <!-- Table Section -->
-    <section class="my-[5vh] w-full max-w-6xl mx-auto"> <!-- Centered table with max width -->
+    <section class="my-[5vh] w-full max-w-6xl mx-auto">
         {% if table %}
         <table class="w-full bg-gray-100 border-collapse">
             <thead>

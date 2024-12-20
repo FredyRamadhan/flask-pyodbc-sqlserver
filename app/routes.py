@@ -80,7 +80,7 @@ def create_pasien():
         jenis_kelamin = request.form['jenis_kelamin']
         
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = '';")
-    return render_template('insert_dokter.html')
+    return render_template('insert_pasien.html')
 
 
 @routes.route('/obat')

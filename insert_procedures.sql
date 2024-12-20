@@ -50,8 +50,28 @@ EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dian', @keluhan = 'Nyeri gu
 EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = '', @id_pasien = '', @id_ruangan = '', @tanggal_periksa = '', @diagnosa = '', @biaya = ;
 
 
+
 -- EXECUTE PROCEDURE INSERT RESEP, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+EXEC INSERT_RES @id_prefix = 'RES_', @id_obat = '', @id_pasien = '', @id_dokter = '';
+
 
 
 /*
@@ -162,6 +182,27 @@ EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Sandi Pratama';
 EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Rita Amalia';
 EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Zaky Arya';
 EXEC INSERT_ADM @id_prefix = 'ADM_', @nama_petugas = 'Fara Anna';
+
+-- EXECUTE PROCEDURE INSERT RUANGAN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = '';
+
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Operasi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Konsultasi 1';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Konsultasi 2';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Radiologi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan UGD';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan ICU';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Anak';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Kardiologi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Onkologi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Endoskopi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Rehabilitasi';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Psikiatri';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Hemodialisa';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Laboratorium';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Kebidanan';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Rawat Inap 1';
+EXEC INSERT_RG @id_prefix = 'R_', @nama_ruangan = 'Ruangan Rawat Inap 2';
 
 
 

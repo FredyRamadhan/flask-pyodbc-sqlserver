@@ -50,12 +50,12 @@ def select(query):
     else:
         return None
 
-def update(data_id, value1):
+def update_dokter(nama_dokter, spesialisasi, telp_dokter, jadwal_praktik, id_dokter):
     conn = create_connection()
     if conn:
         try:
             cursor = conn.cursor()
-            cursor.execute("UPDATE dokter SET nama_dokter = ? WHERE id_dokter = ?", (value1, data_id))
+            cursor.execute("UPDATE dokter SET nama_dokter = ?, spesialisasi = ?, telp_dokter = ?, jadwal_praktik = ? WHERE id_dokter = ?", (nama_dokter, spesialisasi, telp_dokter, jadwal_praktik, id_dokter))
             conn.commit()
             flash('Table updated successfully!', 'success')
             table = cursor.fetchall()

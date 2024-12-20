@@ -49,8 +49,12 @@ def create_dokter():
 @routes.route('/dokter/update/<id_dokter>', methods=['GET', 'POST'])
 def update_dokter(id_dokter):
     if request.method == 'POST':
-        new_name = request.form['nama_dokter']
-        update(id_dokter, new_name)
+        nama_dokter = request.form['nama_dokter']
+        spesialisasi = request.form['spesialisasi']
+        telp_dokter = request.form['telp_dokter']
+        jadwal_praktik = request.form['jadwal_praktik']
+        
+        update_dokter(nama_dokter, spesialisasi, telp_dokter, jadwal_praktik, id_dokter)
         return redirect(url_for('routes.dokter'))
     table = select(f"select nama_dokter from dokter where id_dokter = '{id_dokter}'")
     return render_template('update_dokter.html', table=table[0])

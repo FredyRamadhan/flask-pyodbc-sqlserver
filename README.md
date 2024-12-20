@@ -1,4 +1,9 @@
 ## Ben kepenak sih mending install aplikasi github desktop, jarene opal iso commit push pull seko aplikasine langsung
+tes
+asdfaf
+hao
+
+
 
 # Running the Program
 - Bikin folder baru

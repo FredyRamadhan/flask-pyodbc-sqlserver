@@ -143,7 +143,6 @@ def create_pasien():
         id_petugas = request.form['id_petugas']
 
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '{nama_pasien}', @keluhan = '{keluhan}', @jenis_kelamin = '{jenis_kelamin}', @tanggal_lahir = '{tanggal_lahir}', @alamat = '{alamat}', @no_hp = '{no_hp}', @id_petugas = '{id_petugas}';")
-        return redirect(url_for('routes.table_pasien'))
     return render_template('insert_pasien.html')
 
 #UPDATE PASIEN
@@ -159,7 +158,7 @@ def update_pasien(id_pasien):
         id_petugas = request.form['id_petugas']
 
         other_update_queries(f'''update pasien set nama_pasien = '{nama_pasien}', keluhan = '{keluhan}', tanggal_lahir = '{tanggal_lahir}', jenis_kelamin = '{jenis_kelamin}', alamat = '{alamat}', no_hp = '{no_hp}', id_petugas = '{id_petugas}' where id_pasien = '{id_pasien}' ''')
-        return redirect(url_for('routes.pasien'))
+        return redirect(url_for('routes.table_pasien'))
     return render_template('update_dokter.html', table=table[0])
 
 #DELETE pasien

@@ -23,14 +23,36 @@ def index():
             where spesialisasi = 'umum'
         ''')
         dokterUmum = cursor.fetchone()
+        
+        cursor.execute('''
+            SELECT count(id_dokter) as jumlah
+            FROM dokter
+            where spesialisasi = 'kandungan'
+        ''')
+        dokterKandungan = cursor.fetchone()
+        
+        cursor.execute('''
+            SELECT count(id_dokter) as jumlah
+            FROM dokter
+            where spesialisasi = 'anak'
+        ''')
+        dokterAnak = cursor.fetchone()
+
+        cursor.execute('''
+            SELECT avg(biaya) as avgbiaya
+            FROM pemeriksaan
+        ''')
+        avgBiaya = cursor.fetchone()
 
         cursor.close()
         conn.close()
-        return render_template('dashboard.html', stokObat=stokObat, dokterUmum = dokterUmum)
+        return render_template('dashboard.html', 
+            stokObat=stokObat, 
+            dokterUmum = dokterUmum, 
+            dokterKandungan = dokterKandungan,
+            avgBiaya=avgBiaya)
     else:
         return render_template('dashboard.html', stokObat=None)
-
-
 
 
 # ROUTE UNTUK CRUD DOKTER

@@ -25,10 +25,10 @@ EXEC INSERT_DOK @id_prefix = 'DOK_', @nama_dokter = 'Bunga', @spesialisasi = 'Pe
 -- EXECUTE PROCEDURE INSERT PASIEN, PREFIX JANGAN DIUBAH, ID-NYA GAUSAH DIMASUKIN, GENERATED AUTOMATICALLY
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '', @keluhan = '', @jenis_kelamin = '', @tanggal_lahir = '', @alamat = '', @no_hp = '', @id_petugas = '';
 
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = ''; 
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Siti', @keluhan = 'Sakit tenggorokan', @jenis_kelamin = 'P', @tanggal_lahir = '1992-05-15', @alamat = 'Jl. Mawar No. 3', @no_hp = '081234567891', @id_petugas = ''; 
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dewi', @keluhan = 'Nyeri saat hamil', @jenis_kelamin = 'P', @tanggal_lahir = '1989-10-22', @alamat = 'Jl. Anggrek No. 7', @no_hp = '081234567892', @id_petugas = ''; 
-EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Budi', @keluhan = 'Gigi berlubang', @jenis_kelamin = 'L', @tanggal_lahir = '2000-08-08', @alamat = 'Jl. Tulip No. 12', @no_hp = '081234567893', @id_petugas = '';
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Andi', @keluhan = 'Demam tinggi', @jenis_kelamin = 'L', @tanggal_lahir = '2015-07-20', @alamat = 'Jl. Melati No. 5', @no_hp = '081234567890', @id_petugas = 'A001'; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Siti', @keluhan = 'Sakit tenggorokan', @jenis_kelamin = 'P', @tanggal_lahir = '1992-05-15', @alamat = 'Jl. Mawar No. 3', @no_hp = '081234567891', @id_petugas = 'A002'; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Dewi', @keluhan = 'Nyeri saat hamil', @jenis_kelamin = 'P', @tanggal_lahir = '1989-10-22', @alamat = 'Jl. Anggrek No. 7', @no_hp = '081234567892', @id_petugas = 'A003'; 
+EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Budi', @keluhan = 'Gigi berlubang', @jenis_kelamin = 'L', @tanggal_lahir = '2000-08-08', @alamat = 'Jl. Tulip No. 12', @no_hp = '081234567893', @id_petugas = 'A003';
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rina', @keluhan = 'Pusing dan flu', @jenis_kelamin = 'P', @tanggal_lahir = '1975-01-13', @alamat = 'Jl. Kenanga No. 10', @no_hp = '081234567894', @id_petugas = ''; 
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Joko', @keluhan = 'Batuk berdahak', @jenis_kelamin = 'L', @tanggal_lahir = '1985-03-18', @alamat = 'Jl. Dahlia No. 9', @no_hp = '081234567895', @id_petugas = ''; 
 EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = 'Rudi', @keluhan = 'Demam dan diare', @jenis_kelamin = 'L', @tanggal_lahir = '1990-04-12', @alamat = 'Jl. Sakura No. 11', @no_hp = '081234567896', @id_petugas = ''; 

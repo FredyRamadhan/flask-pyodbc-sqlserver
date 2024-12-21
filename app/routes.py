@@ -222,13 +222,13 @@ def create_pemeriksaan():
 def create_pem_commit():
     if request.method == 'POST':
         id_dokter = request.form['id_dokter']
-        id_pasien = request.form['id_pasien']
+        # id_pasien = request.form['id_pasien']
         id_ruangan = request.form['id_ruangan']
         tanggal_periksa = request.form['tanggal_periksa']
         diagnosa = request.form['diagnosa']
         biaya = request.form['biaya']
     insert_update_queries(f"EXEC INSERT_PEM @id_prefix = 'PEM_', @id_dokter = 'DOK_6', @id_pasien = 'PAS_1', @id_ruangan = '{id_ruangan}', @tanggal_periksa = '{tanggal_periksa}', @diagnosa = '{diagnosa}', @biaya = {biaya};")
-    return redirect(url_for(routes.table_pemeriksaan))
+    return render_template('insert_pemeriksaan.html')
 
 
 #RESEP

@@ -64,7 +64,7 @@ BEGIN
     DECLARE @NEW_PEM_ID VARCHAR(10);
     IF @id_prefix = 'PEM_'
         SET @NEW_PEM_ID = CONCAT(@id_prefix, NEXT VALUE FOR ID_PEM);
-    INSERT INTO TABLE_NAME (id_periksa, id_dokter, id_pasien, id_ruangan, tanggal_periksa, diagnosa, biaya) 
+    INSERT INTO pemeriksaan (id_periksa, id_dokter, id_pasien, id_ruangan, tanggal_periksa, diagnosa, biaya) 
     VALUES (@NEW_PEM_ID, @id_dokter, @id_pasien, @id_ruangan, @tanggal_periksa, @diagnosa, @biaya);
 END;
 

@@ -81,7 +81,7 @@ BEGIN
     DECLARE @NEW_RES_ID VARCHAR(10);
     IF @id_prefix = 'RES_'
         SET @NEW_RES_ID = CONCAT(@id_prefix, NEXT VALUE FOR ID_RES);
-    INSERT INTO TABLE_NAME (id_resep, id_obat, id_pasien, id_dokter) 
+    INSERT INTO resep (id_resep, id_obat, id_pasien, id_dokter) 
     VALUES ( @NEW_RES_ID, @id_obat, @id_pasien, @id_dokter);
 END;
 

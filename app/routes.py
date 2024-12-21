@@ -102,8 +102,8 @@ def update_dokter(id_dokter):
 
         other_update_queries(f'''update dokter set nama_dokter = '{nama_dokter}', spesialisasi = '{spesialisasi}', telp_dokter = '{telp_dokter}', jadwal_praktik = '{jadwal_praktik}' where id_dokter = '{id_dokter}' ''')
         return redirect(url_for('routes.dokter'))
-    table = select(f"select nama_dokter from dokter where id_dokter = '{id_dokter}'")
-    return render_template('update_dokter.html', table=table[0])
+    table = select(f"select nama_dokter, spesialisasi, telp_dokter from dokter where id_dokter = '{id_dokter}'")
+    return render_template('update_dokter.html', table=table)
 
 #DELETE DOKTER
 @routes.route('/dokter/delete/<id_dokter>', methods=['POST'])
@@ -111,15 +111,6 @@ def delete_dokter(id_dokter):
     insert_update_queries(f"delete from dokter where id_dokter = '{id_dokter}'")
     
     return redirect(url_for('routes.dokter'))
-
-# ROUTE UNTUK FILTERING TABEL DOKTER
-@routes.route('/dokter/by_spesialisasi')
-def dokter_by_sp():
-    table = select('''
-        select * from dokter
-        where spesialisasi = 'umum'
-        order by id_dokter''')
-    return render_template('table_dokter.html', table=table)
 
 
 #PASIEN
@@ -143,7 +134,7 @@ def create_pasien():
         id_petugas = request.form['id_petugas']
 
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '{nama_pasien}', @keluhan = '{keluhan}', @jenis_kelamin = '{jenis_kelamin}', @tanggal_lahir = '{tanggal_lahir}', @alamat = '{alamat}', @no_hp = '{no_hp}', @id_petugas = '{id_petugas}';")
-    return render_template('insert_dokter.html')
+    return render_template('insert_pasien.html')
 
 #UPDATE PASIEN
 @routes.route('/pasien/update/<id_pasien>', methods=['GET', 'POST'])
@@ -158,8 +149,8 @@ def update_pasien(id_pasien):
         id_petugas = request.form['id_petugas']
 
         other_update_queries(f'''update pasien set nama_pasien = '{nama_pasien}', keluhan = '{keluhan}', tanggal_lahir = '{tanggal_lahir}', jenis_kelamin = '{jenis_kelamin}', alamat = '{alamat}', no_hp = '{no_hp}', id_petugas = '{id_petugas}' where id_pasien = '{id_pasien}' ''')
-        return redirect(url_for('routes.pasien'))
-    return render_template('update_dokter.html', table=table[0])
+    table = select(f"select nama_pasien, keluhan, tanggal_lahir, jenis_kelamin, alamat, no_hp from pasien where id_pasien = '{id_pasien}' ")
+    return render_template('update_pasien.html', table=table)
 
 #DELETE pasien
 @routes.route('/pasien/delete/<id_pasien>', methods=['POST'])

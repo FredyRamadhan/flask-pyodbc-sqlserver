@@ -20,21 +20,46 @@
       {% endif %}
     {% endwith %}
 
-    <!-- Form to update dokter -->
-    <form method="POST" class="space-y-4">
-      <div class="mb-4">
-        <label for="name" class="block text-lg font-medium text-dark">Nama Dokter</label>
-        <input type="text" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-accent" id="name" name="nama_dokter" value="{{ table.nama_dokter }}" required>
+    <!-- Form to update dokter 
+     -->
+     <form method="POST">
+      <div class="flex flex-col p-4 gap-4 border-2 border-accent">
+          <!-- Nama Dokter -->
+           <p>{{ table.nama_dokter }}</p>
+          <div class="flex justify-between gap-4 p-4">
+              <label class="align-middle flex p-0 text-dark" for="id_dokter">Nama Dokter</label>
+              <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Nama Dokter" type="text" name="nama_dokter" id="nama_dokter" value="{{ table.nama_dokter }}">
+          </div>
+
+          <!-- Spesialisasi -->
+          <div class="flex justify-between gap-4 p-4">
+              <label class="align-middle flex p-0 text-dark" for="spesialisasi">Spesialisasi</label>
+              <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Spesialisasi" type="text" name="spesialisasi" id="spesialisasi" value="{{ table.spesialisasi }}">
+          </div>
+
+          <!-- Nomor Telepon Dokter -->
+          <div class="flex justify-between gap-4 p-4">
+              <label class="align-middle flex p-0 text-dark" for="telp_dokter">Nomor Telepon</label>
+              <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Telepon Dokter" type="text" name="telp_dokter" id="telp_dokter" value="{{ table.telp_dokter }}">
+          </div>
+
+          <!-- Jadwal Praktik -->
+          <div class="flex justify-between gap-4 p-4">
+              <label class="align-middle flex p-0 text-dark" for="jadwal_praktik">Jadwal Praktik</label>
+              <select class="border-2 border-gray-500 w-[80%] p-2" name="jadwal_praktik" id="jadwal_praktik">
+                  <option value="senin">Senin</option>
+                  <option value="selasa">Selasa</option>
+                  <option value="rabu">Rabu</option>
+                  <option value="kamis">Kamis</option>
+                  <option value="jumat">Jumat</option>
+              </select>
+          </div>
+          <div class="flex justify-end gap-6 p-4">
+              <a href="{{ url_for('routes.dokter') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
+              <button type="submit" class="px-8 py-3 bg-accent text-whites">Unggah</button>
+          </div>
       </div>
+  </form>
 
-      <button type="submit" class="w-full p-2 bg-accent text-whites rounded-md hover:bg-accent_dark focus:outline-none">Update</button>
-    </form>
-
-    <!-- Back to table link -->
-    <div class="mt-4">
-      <a href="{{ url_for('routes.dokter') }}" class="inline-block py-2 px-4 bg-gray-500 text-whites rounded-md hover:bg-gray-600">Back to Table A List</a>
-    </div>
-  
-  </div>
 </main>
 {% endblock %}

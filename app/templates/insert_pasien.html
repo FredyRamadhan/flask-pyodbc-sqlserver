@@ -55,7 +55,7 @@
                     <!-- Tanggal Lahir -->
                     <div class="flex justify-between gap-4 p-4">
                         <label class="align-middle flex p-0 text-dark" for="tanggal_lahir">Tanggal Lahir</label>
-                        <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+                        <input class="border-2 border-gray-500 w-[80%] p-2" type="text" id="tanggal_lahir" name="tanggal_lahir" placeholder="yyyy-mm-dd">
                     </div>
 
                     <!-- Alamat -->
@@ -94,7 +94,7 @@
                         </select>
                     </div>
                     <div class="flex justify-end gap-6 p-4">
-                        <a href="{{ url_for('routes.pasien') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
+                        <a href="{{ url_for('routes.table_pasien') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
                         <button type="submit" class="px-8 py-3 bg-accent text-whites">Unggah</button>
                     </div>
                 </div>

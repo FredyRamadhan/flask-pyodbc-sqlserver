@@ -1,0 +1,80 @@
+{% extends "index.html" %}
+
+{% block title %}Insert Data Resep{% endblock %}
+
+{% block content %}
+<main class="px-6 py-4">
+    <div class="md:max-w-[1200px] mx-auto">
+        
+        <section class="mt-[2vh]">
+            <div class="flex justify-center py-4 text-accent font-bold text-3xl">
+                <p>Insert Data Resep</p>
+            </div>
+        </section>
+
+        <section class="mt-[2vh]">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            <div class="mb-4">
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+        </section>
+
+        <section class="mt-[5vh]">
+            <form action="/pemeriksaan/create/commit" method="POST">
+                <div class="flex flex-col p-4 gap-4 border-2 border-accent">
+
+                    <!-- ID Resep -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_resep">ID Resep</label>
+                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="ID Resep" type="text" name="id_resep" id="id_resep">
+                    </div>
+
+                    <!-- ID Obat -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_obat">ID Obat</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_obat" id="id_obat">
+                            {% for A in option_obat %}
+                            <option value="{{ A.id_obat }}">{{ A.nama_obat }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- ID Pasien -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_pasien">ID Pasien</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_pasien" id="id_pasien">
+                            {% for B in option_pasien %}
+                            <option value="{{ B.id_pasien }}">{{ B.nama_pasien }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <!-- ID Dokter -->
+                    <div class="flex justify-between gap-4 p-4">
+                        <label class="align-middle flex p-0 text-dark" for="id_dokter">ID Dokter</label>
+                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_dokter" id="id_dokter">
+                            {% for C in option_dokter %}
+                            <option value="{{ C.id_dokter }}">{{ C.nama_dokter }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="flex justify-end gap-6 p-4">
+                        <a href="{{ url_for('routes.table_resep') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
+                        <button type="submit" class="px-8 py-3 bg-accent text-whites">Unggah</button>
+                    </div>
+                </div>
+            </form>
+            <br>
+        </section>
+    </div>
+</main>
+{% endblock %}

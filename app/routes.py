@@ -23,14 +23,44 @@ def index():
             where spesialisasi = 'umum'
         ''')
         dokterUmum = cursor.fetchone()
+        
+        cursor.execute('''
+            SELECT count(id_dokter) as jumlah
+            FROM dokter
+            where spesialisasi = 'kandungan'
+        ''')
+        dokterKandungan = cursor.fetchone()
+        
+        cursor.execute('''
+            SELECT count(id_dokter) as jumlah
+            FROM dokter
+            where spesialisasi = 'anak'
+        ''')
+        dokterAnak = cursor.fetchone()
+
+        cursor.execute('''
+            SELECT avg(biaya) as avgbiaya
+            FROM pemeriksaan
+        ''')
+        avgBiaya = cursor.fetchone()
+
+        cursor.execute('''
+            SELECT count(id_ruangan) as jmlRuangan
+            FROM ruangan
+        ''')
+        jmlRuangan = cursor.fetchone()
+
 
         cursor.close()
         conn.close()
-        return render_template('dashboard.html', stokObat=stokObat, dokterUmum = dokterUmum)
+        return render_template('dashboard.html', 
+            stokObat=stokObat, 
+            dokterUmum = dokterUmum, 
+            dokterKandungan = dokterKandungan,
+            avgBiaya=avgBiaya,
+            jmlRuangan=jmlRuangan)
     else:
         return render_template('dashboard.html', stokObat=None)
-
-
 
 
 # ROUTE UNTUK CRUD DOKTER
@@ -88,12 +118,14 @@ def dokter_by_sp():
 
 
 #PASIEN
+
+#READ PASIEN
 @routes.route('/pasien')
 def table_pasien():
     table = select("select * from pasien order by id_pasien")
     return render_template('table_pasien.html', table=table)
 
-
+#CREATE PASIEN
 @routes.route('/pasien/create', methods=['GET', 'POST'])
 def create_pasien():
     if request.method == 'POST':
@@ -108,6 +140,7 @@ def create_pasien():
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '{nama_pasien}', @keluhan = '{keluhan}', @jenis_kelamin = '{jenis_kelamin}', @tanggal_lahir = '{tanggal_lahir}', @alamat = '{alamat}', @no_hp = '{no_hp}', @id_petugas = '{id_petugas}';")
     return render_template('insert_dokter.html')
 
+#UPDATE PASIEN
 @routes.route('/pasien/update/<id_pasien>', methods=['GET', 'POST'])
 def update_pasien(id_pasien):
     if request.method == 'POST':
@@ -119,9 +152,9 @@ def update_pasien(id_pasien):
         no_hp = request.form['no_hp']
         id_petugas = request.form['id_petugas']
 
-        other_update_queries(f'''update pasien set nama_pasien = '{nama_pasien}', keluhan = '{keluhan}', tanggal_lahir = '{tanggal_lahir}', jenis_kelamin = '{jenis_kelamin}', alamat = '{alamat}', no_hp = '{no_hp}', id_petugas = '{id_petugas}'  where id_pasien = '{id_pasien}' ''')
+        other_update_queries(f'''update pasien set nama_pasien = '{nama_pasien}', keluhan = '{keluhan}', tanggal_lahir = '{tanggal_lahir}', jenis_kelamin = '{jenis_kelamin}', alamat = '{alamat}', no_hp = '{no_hp}', id_petugas = '{id_petugas}' where id_pasien = '{id_pasien}' ''')
         return redirect(url_for('routes.pasien'))
-    return render_template('update_pasien.html', table=table[0])
+    return render_template('update_dokter.html', table=table[0])
 
 #DELETE pasien
 @routes.route('/pasien/delete/<id_pasien>', methods=['POST'])
@@ -202,9 +235,58 @@ def create_pem_commit():
 
 
 #RESEP
+
+#READ RESEP
 @routes.route('/resep')
 def table_resep():
     table = select("select * from resep order by id_resep")
+    return render_template('table_resep.html', table=table)
+
+#CREATE RESEP
+@routes.route('/resep/create', methods=['GET', 'POST'])
+def create_resep():
+    if request.method == 'POST':
+        id_pasien = request.form['id_pasien']
+        id_dokter = request.form['id_dokter']
+        nama_obat = request.form['nama_obat']
+        dosis = request.form['dosis']
+        jadwal_pemberian = request.form['jadwal_pemberian']
+
+        insert_update_queries(f"EXEC INSERT_RESEP @id_pasien = '{id_pasien}', @id_dokter = '{id_dokter}', @nama_obat = '{nama_obat}', @dosis = '{dosis}', @jadwal_pemberian = '{jadwal_pemberian}'")
+        return redirect(url_for('routes.table_resep'))
+    
+    return render_template('insert_resep.html')
+
+# UPDATE RESEP
+@routes.route('/resep/update/<id_resep>', methods=['GET', 'POST'])
+def update_resep(id_resep):
+    if request.method == 'POST':
+        id_pasien = request.form['id_pasien']
+        id_dokter = request.form['id_dokter']
+        nama_obat = request.form['nama_obat']
+        dosis = request.form['dosis']
+        jadwal_pemberian = request.form['jadwal_pemberian']
+
+        other_update_queries(f'''update resep set id_pasien = '{id_pasien}', id_dokter = '{id_dokter}', nama_obat = '{nama_obat}', dosis = '{dosis}', jadwal_pemberian = '{jadwal_pemberian}' where id_resep = '{id_resep}' ''')
+        return redirect(url_for('routes.table_resep'))
+    
+    table = select(f"select * from resep where id_resep = '{id_resep}'")
+    return render_template('update_resep.html', table=table[0])
+
+# DELETE RESEP
+@routes.route('/resep/delete/<id_resep>', methods=['POST'])
+def delete_resep(id_resep):
+    insert_update_queries(f"delete from resep where id_resep = '{id_resep}'")
+    
+    return redirect(url_for('routes.table_resep'))
+
+# ROUTE UNTUK FILTERING TABEL RESEP
+@routes.route('/resep/by_dokter/<id_dokter>')
+def resep_by_dokter(id_dokter):
+    table = select(f'''
+        select * from resep
+        where id_dokter = '{id_dokter}'
+        order by id_resep''')
     return render_template('table_resep.html', table=table)
 
 #OBAT

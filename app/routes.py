@@ -60,7 +60,12 @@ def index():
             avgBiaya=avgBiaya,
             jmlRuangan=jmlRuangan)
     else:
-        return render_template('dashboard.html', stokObat=None)
+        return render_template('dashboard.html',
+            stokObat= None, 
+            dokterUmum = None, 
+            dokterKandungan = None,
+            avgBiaya=None,
+            jmlRuangan=None)
 
 
 # ROUTE UNTUK CRUD DOKTER

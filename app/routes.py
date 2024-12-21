@@ -44,13 +44,21 @@ def index():
         ''')
         avgBiaya = cursor.fetchone()
 
+        cursor.execute('''
+            SELECT count(id_ruangan) as jmlRuangan
+            FROM ruangan
+        ''')
+        jmlRuangan = cursor.fetchone()
+
+
         cursor.close()
         conn.close()
         return render_template('dashboard.html', 
             stokObat=stokObat, 
             dokterUmum = dokterUmum, 
             dokterKandungan = dokterKandungan,
-            avgBiaya=avgBiaya)
+            avgBiaya=avgBiaya,
+            jmlRuangan=jmlRuangan)
     else:
         return render_template('dashboard.html', stokObat=None)
 

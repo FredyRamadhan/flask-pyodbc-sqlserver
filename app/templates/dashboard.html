@@ -22,8 +22,8 @@ Dashboard
             {% if stokObat %}
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Avg Biaya Periksa</h3>
-                <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                    <p class="text-accent text-md font-semibold">{{ avgBiaya }}</p>  <!-- nama_obat -->
+                <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded h-full">
+                    <p class="text-accent_dark text-5xl font-bold ">{{ avgBiaya.avgbiaya }}</p>  <!-- nama_obat -->
                 </div>
             </div>
             {% endif %}
@@ -60,40 +60,18 @@ Dashboard
                 </div>
             </div>
 
+            {% if jmlRuangan %}
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Ruangan Tersedia</h3>
-                <p class="text-dark">sdfas</p>
+                <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded h-full">
+                    <p class="text-accent_dark text-5xl font-bold">{{ jmlRuangan.jmlRuangan }}</p>  <!-- nama_obat -->
+                </div>
             </div>
+            {% endif %}
+
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Card 5</h3>
                 <p class="text-dark">asdfasdf</p>
-            </div>
-            <div class="bg-whites col-span-2 p-4 shadow-lg flex flex-col gap-2 rounded-lg">
-                <h3 class="text-xl font-medium text-dark">Ruangan Tersedia</h3>
-                <div class="flex gap-2">
-                    {% if dokterUmum %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Umum</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterUmum.jumlah }}</p>
-                    </div>
-                    {% endif %}
-                    {% if dokterAnak %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Anak</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterAnak.jumlah }}</p>
-                    </div>
-                    {% endif %}
-                    {% if dokterKandungan %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Kandungan</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterKandungan.jumlah }}</p>
-                    </div>
-                    {% endif %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">dokter paling uhuy</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterUmum.jumlah }}</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

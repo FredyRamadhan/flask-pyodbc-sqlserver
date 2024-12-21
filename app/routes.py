@@ -291,12 +291,13 @@ def table_obat():
     table = select("select * from obat order by id_obat")
     return render_template('table_obat.html', table=table)
 
-
+#RUANGAN
 @routes.route('/ruangan')
 def table_ruangan():
     table = select("select * from ruangan order by id_ruangan")
     return render_template('table_ruangan.html', table=table)  
 
+#PETUGAS ADMIN
 @routes.route('/admin')
 def table_admin():
     table = select("select * from petugas_admin order by id_petugas")

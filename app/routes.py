@@ -143,6 +143,7 @@ def create_pasien():
         id_petugas = request.form['id_petugas']
 
         insert_update_queries(f"EXEC INSERT_PAS @ID_PREFIX = 'PAS_', @nama_pasien = '{nama_pasien}', @keluhan = '{keluhan}', @jenis_kelamin = '{jenis_kelamin}', @tanggal_lahir = '{tanggal_lahir}', @alamat = '{alamat}', @no_hp = '{no_hp}', @id_petugas = '{id_petugas}';")
+        return redirect(url_for('routes.table_pasien'))
     return render_template('insert_pasien.html')
 
 #UPDATE PASIEN

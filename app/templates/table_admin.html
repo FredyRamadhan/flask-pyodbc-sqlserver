@@ -8,21 +8,22 @@ Tabel Petugas Admin
     <section class="mt-[5vh] text-2xl text-center font-bold">
         <p>Daftar Petugas Admin Klinik Cepat Sembuh</p>
     </section>
+
     <!-- Table Section -->
     <section class="my-[5vh] w-full max-w-6xl mx-auto">
         {% if table %}
         <table class="w-full bg-gray-100 border-collapse">
             <thead>
                 <tr class="bg-gray-300 text-black">
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Id Petugas</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Nama Petugas</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Id Petugas</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Nama Petugas</th>
                 </tr>
             </thead>
             <tbody class="bg-gray-200">
                 {% for A in table %}
                 <tr>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.id_petugas }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.nama_petugas }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.id_petugas }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.nama_petugas }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

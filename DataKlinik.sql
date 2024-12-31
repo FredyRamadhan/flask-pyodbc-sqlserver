@@ -1,5 +1,5 @@
 -- memasukkan data ke tabel
-use KLINIK
+use COBAKLINIK
 
 -- isi tabel petugas admin
 INSERT INTO petugas_admin (id_petugas, nama_petugas) 
@@ -64,3 +64,4 @@ VALUES
 ('O015', 'Losartan', '12000', 200, 'Antihipertensi'),
 ('O016', 'Tetrachloride', '20000', 80, 'Tetes Mata Antioksidan'),
 ('O017', 'Doen Suspension', '10000', 200, 'Antasida');
+

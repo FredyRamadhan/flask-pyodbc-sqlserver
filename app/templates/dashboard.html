@@ -11,52 +11,38 @@ Dashboard
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Stok Obat Terbanyak</h3>
                 <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                    <p class="text-accent text-md font-semibold">{{ stokObat[0] }}</p>  <!-- nama_obat -->
-                    <p class="text-accent_dark text-5xl font-bold">{{ stokObat[1] }}</p>  <!-- stok -->
+                    <p class="text-accent text-md font-semibold">{{ stokObat }}</p>
                 </div>
             </div>
             {% else %}
             <p class="text-dark">Tidak ada data obat</p>
             {% endif %}
 
-            {% if stokObat %}
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Avg Biaya Periksa</h3>
                 <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded h-full">
-                    <p class="text-accent_dark text-5xl font-bold ">{{ avgBiaya.avgbiaya }}</p>  <!-- nama_obat -->
+                    <p class="text-accent_dark text-5xl font-bold">{{ avgBiaya }}</p>
                 </div>
             </div>
-            {% endif %}
-            
+
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Total Pasien</h3>
-                <p class="text-dark">asdfasdf</p>
+                <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
+                    <p class="text-accent_dark text-5xl font-bold">{{ totalPasien }}</p>
+                </div>
             </div>
+
             <div class="bg-whites col-span-2 p-4 shadow-lg flex flex-col gap-2 rounded-lg">
                 <h3 class="text-xl font-medium text-dark">Jumlah Dokter</h3>
                 <div class="flex gap-2">
-                    {% if dokterUmum %}
+                    {% for spesialisasi, jumlah in [('Dokter Umum', dokterUmum), ('Dokter Anak', dokterAnak), ('Dokter Kandungan', dokterKandungan), ('Dokter THT', dokterTHT), ('Dokter Mata', dokterMata)] %}
+                    {% if jumlah %}
                     <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Umum</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterUmum.jumlah }}</p>
+                        <p class="text-accent_dark font-bold">{{ spesialisasi }}</p>
+                        <p class="text-accent_dark text-5xl font-bold">{{ jumlah }}</p>
                     </div>
                     {% endif %}
-                    {% if dokterAnak %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Anak</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterAnak.jumlah }}</p>
-                    </div>
-                    {% endif %}
-                    {% if dokterKandungan %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">Dokter Kandungan</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterKandungan.jumlah }}</p>
-                    </div>
-                    {% endif %}
-                    <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded">
-                        <p class="text-accent_dark  font-bold">dokter paling uhuy</p>
-                        <p class="text-accent_dark text-5xl font-bold">{{ dokterUmum.jumlah }}</p>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
 
@@ -64,15 +50,10 @@ Dashboard
             <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
                 <h3 class="text-xl font-medium text-dark">Ruangan Tersedia</h3>
                 <div class="flex flex-col gap-2 justify-between bg-base p-2 rounded h-full">
-                    <p class="text-accent_dark text-5xl font-bold">{{ jmlRuangan.jmlRuangan }}</p>  <!-- nama_obat -->
+                    <p class="text-accent_dark text-5xl font-bold">{{ jmlRuangan }}</p>
                 </div>
             </div>
             {% endif %}
-
-            <div class="bg-whites p-4 shadow-lg rounded-lg flex flex-col gap-2">
-                <h3 class="text-xl font-medium text-dark">Card 5</h3>
-                <p class="text-dark">asdfasdf</p>
-            </div>
         </div>
     </div>
 {% endblock %}

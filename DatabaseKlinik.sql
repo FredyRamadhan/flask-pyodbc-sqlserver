@@ -1,9 +1,9 @@
 
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'KLINIK')
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = 'COBAKLINIK')
 BEGIN
-    CREATE DATABASE KLINIK;
+    CREATE DATABASE COBAKLINIK;
 END
-USE KLINIK
+USE COBAKLINIK
 
 drop table if exists dokter;
 drop table if exists petugas_admin;

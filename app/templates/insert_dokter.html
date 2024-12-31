@@ -6,13 +6,13 @@
 <main class="px-6 py-4">
     <div class="md:max-w-[1200px] mx-auto">
         
-        <section class="mt-[2vh]">
-            <div class="flex justify-center py-4 text-accent font-bold text-3xl">
-                <p>Input Data ke Tabel Dokter</p>
-            </div>
+        <!-- Title Section -->
+        <section class="mt-[5vh] text-2xl text-center font-bold text-accent">
+            <p>Input Data ke Tabel Dokter</p>
         </section>
 
-        <section class="mt-[2vh]">
+        <!-- Flash Messages Section -->
+        <section class="mt-[3vh]">
             {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
             <div class="mb-4">
@@ -27,46 +27,48 @@
             {% endwith %}
         </section>
 
+        <!-- Form Section -->
         <section class="mt-[5vh]">
             <form action="/dokter/create" method="POST">
-                <div class="flex flex-col p-4 gap-4 border-2 border-accent">
+                <div class="bg-base p-6 rounded-lg shadow-lg max-w-4xl mx-auto border-2 border-accent">
 
                     <!-- Nama Dokter -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="id_dokter">Nama Dokter</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Nama Dokter" type="text" name="nama_dokter" id="nama_dokter">
+                    <div class="flex justify-between gap-6 py-4">
+                        <label class="flex items-center text-dark w-1/3" for="nama_dokter">Nama Dokter</label>
+                        <input class="border-2 border-gray-500 w-2/3 p-3 rounded-md" placeholder="Nama Dokter" type="text" name="nama_dokter" id="nama_dokter">
                     </div>
 
                     <!-- Spesialisasi -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="spesialisasi">Spesialisasi</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Spesialisasi" type="text" name="spesialisasi" id="spesialisasi">
+                    <div class="flex justify-between gap-6 py-4">
+                        <label class="flex items-center text-dark w-1/3" for="spesialisasi">Spesialisasi</label>
+                        <input class="border-2 border-gray-500 w-2/3 p-3 rounded-md" placeholder="Spesialisasi" type="text" name="spesialisasi" id="spesialisasi">
                     </div>
 
                     <!-- Nomor Telepon Dokter -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="telp_dokter">Nomor Telepon Dokter</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Telepon Dokter" type="text" name="telp_dokter" id="telp_dokter">
+                    <div class="flex justify-between gap-6 py-4">
+                        <label class="flex items-center text-dark w-1/3" for="telp_dokter">Nomor Telepon Dokter</label>
+                        <input class="border-2 border-gray-500 w-2/3 p-3 rounded-md" placeholder="Telepon Dokter" type="text" name="telp_dokter" id="telp_dokter">
                     </div>
 
                     <!-- Jadwal Praktik -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="jadwal_praktik">Jadwal Praktik</label>
-                        <select class="border-2 border-gray-500 w-[80%] p-2" name="jadwal_praktik" id="jadwal_praktik">
-                            <option value="senin">Senin</option>
-                            <option value="selasa">Selasa</option>
-                            <option value="rabu">Rabu</option>
-                            <option value="kamis">Kamis</option>
-                            <option value="jumat">Jumat</option>
+                    <div class="flex justify-between gap-6 py-4">
+                        <label class="flex items-center text-dark w-1/3" for="jadwal_praktik">Jadwal Praktik</label>
+                        <select class="border-2 border-gray-500 w-2/3 p-3 rounded-md" name="jadwal_praktik" id="jadwal_praktik">
+                            <option value="Senin">Senin</option>
+                            <option value="Selasa">Selasa</option>
+                            <option value="Rabu">Rabu</option>
+                            <option value="Kamis">Kamis</option>
+                            <option value="Jumat">Jumat</option>
                         </select>
                     </div>
-                    <div class="flex justify-end gap-6 p-4">
-                        <a href="{{ url_for('routes.dokter') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
-                        <button type="submit" class="px-8 py-3 bg-accent text-whites">Unggah</button>
+
+                    <!-- Action Buttons -->
+                    <div class="flex justify-end gap-6 py-6">
+                        <a href="{{ url_for('routes.dokter') }}" class="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-whites transition-colors">Back to Table A List</a>
+                        <button type="submit" class="px-8 py-3 bg-accent text-whites hover:bg-accent-dark transition-colors">Unggah</button>
                     </div>
                 </div>
             </form>
-            <br>
         </section>
     </div>
 </main>

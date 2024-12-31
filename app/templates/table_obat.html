@@ -5,8 +5,22 @@ Tabel Obat
 {% endblock %}
 
 {% block content %}
+    <!-- Title Section -->
     <section class="mt-[5vh] text-2xl text-center font-bold">
         <p>Daftar Obat Klinik Cepat Sembuh</p>
+    </section>
+
+    <!-- Filter Section (Sorting Dropdown) -->
+    <section class="mt-[5vh]">
+        <div class="flex justify-end max-w-5xl w-full mx-auto">
+            <!-- Dropdown for sorting -->
+            <select name="sort" id="sort" class="p-2 bg-accent text-whites rounded-md w-[20%]" onchange="location.href=this.value">
+                <option value="#" selected disabled>Urutkan Berdasarkan</option>
+                <option value="/obat/by_nama">Nama</option>
+                <option value="/obat/by_harga">Harga</option>
+                <option value="/obat/by_stok">Stok</option>
+            </select>
+        </div>
     </section>
 
     <!-- Table Section -->

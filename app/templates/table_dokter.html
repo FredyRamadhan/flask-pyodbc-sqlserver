@@ -11,8 +11,7 @@ Tabel Dokter
 
     <section class="mt-[5vh]">
         <div class="flex justify-between max-w-5xl w-full mx-auto">
-            <a class="p-2 bg-accent text-whites rounded-md" href="/dokter/create">Tambahkan Data</a>
-            <a class="p-2 bg-accent text-whites rounded-md" href="/dokter/by_spesialisasi">Tes Filter Spesialisasi</a>
+            <a class="p-3 bg-accent text-whites rounded-md" href="/dokter/create">Tambahkan Data</a>
         </div>
     </section>
 
@@ -22,27 +21,27 @@ Tabel Dokter
         <table class="w-full bg-gray-100 border-collapse">
             <thead>
                 <tr class="bg-gray-300 text-black">
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Id Dokter</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Nama Dokter</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Spesialisasi</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Jadwal Praktik</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Kontak</th>
-                    <th class="p-2 px-6 border-gray-800 border-[.6px]">Ganti / Hapus</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Id Dokter</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Nama Dokter</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Spesialisasi</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Jadwal Praktik</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Kontak</th>
+                    <th class="p-4 px-6 border-l-[1px] border-t-[1px] border-b-[1px] border-r-[1px] border-accent rounded-md">Ganti / Hapus</th>
                 </tr>
             </thead>
             <tbody class="bg-gray-200">
                 {% for A in table %}
                 <tr>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.id_dokter }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.nama_dokter }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.spesialisasi }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.jadwal_praktik }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">{{ A.telp_dokter }}</td>
-                    <td class="border-gray-800 border-[.6px] px-5 py-2 text-center">
-                        <div class="inline-flex gap-2 justify-between text-white text-sm">
-                            <a href="/dokter/update/{{ A.id_dokter }}" class="p-2 px-4 bg-accent">Update</a>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.id_dokter }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.nama_dokter }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.spesialisasi }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.jadwal_praktik }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">{{ A.telp_dokter }}</td>
+                    <td class="px-6 py-3 text-center border-l-[1px] border-b-[1px] border-r-[1px] border-accent">
+                        <div class="inline-flex gap-3 justify-between text-white text-sm">
+                            <a href="/dokter/update/{{ A.id_dokter }}" class="p-2 px-4 bg-accent rounded-md">Update</a>
                             <form action="/dokter/delete/{{ A.id_dokter }}" method="POST">
-                                <button type="submit" class="p-2 px-4 bg-red-800" onclick="return confirm('Are you sure you want to delete this doctor?');">Delete</button>
+                                <button type="submit" class="p-2 px-4 bg-red-800 rounded-md" onclick="return confirm('Are you sure you want to delete this doctor?');">Delete</button>
                             </form>
                         </div>
                     </td>

@@ -1,106 +1,93 @@
 {% extends "index.html" %}
 
-{% block title %}Update Data Pasien{% endblock %}
+{% block title %}Update Pasien{% endblock %}
 
 {% block content %}
 <main class="px-6 py-4">
-    <div class="md:max-w-[1200px] mx-auto">
-        
-        <section class="mt-[2vh]">
-            <div class="flex justify-center py-4 text-accent font-bold text-3xl">
-                <p>Update Data ke Tabel Pasien</p>
+  <div class="md:max-w-[1200px] mx-auto mt-[5vh]">
+
+    <!-- Title Section -->
+    <section class="mt-[2vh] text-center text-2xl font-bold text-accent">
+        <p>Update Data Pasien</p>
+    </section>
+
+    <!-- Flash Messages Section -->
+    <section class="mt-[3vh]">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="mb-4">
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                <strong>{{ message }}</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
-        </section>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+    </section>
 
-        <section class="mt-[2vh]">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-            <div class="mb-4">
-                {% for category, message in messages %}
-                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-                    <strong>{{ message }}</strong>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
+    <!-- Form Section -->
+    <section class="mt-[5vh]">
+        <form method="POST" class="space-y-6 p-6 border-2 border-accent rounded-lg shadow-lg max-w-4xl mx-auto">
+            
+            <!-- Nama Pasien -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="nama_pasien" class="flex items-center text-dark w-1/3">Nama Pasien</label>
+                <input class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" type="text" name="nama_pasien" id="nama_pasien" value="{{ table.nama_pasien }}" required>
             </div>
-            {% endif %}
-            {% endwith %}
-        </section>
 
-        <section class="mt-[5vh]">
-            <form action="/pasien/update" method="POST">
-                <div class="flex flex-col p-4 gap-4 border-2 border-accent">
+            <!-- Keluhan -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="keluhan" class="flex items-center text-dark w-1/3">Keluhan</label>
+                <input class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" type="text" name="keluhan" id="keluhan" value="{{ table.keluhan }}" required>
+            </div>
 
-                    <!-- Nama Pasien -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="nama_pasien">Nama Pasien</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="{{ table.nama_pasien }}" type="text" name="nama_pasien" value="{{ table.nama_pasien }}" id="nama_pasien">
-                    </div>
+            <!-- Jenis Kelamin -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="jenis_kelamin" class="flex items-center text-dark w-1/3">Jenis Kelamin</label>
+                <select class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" name="jenis_kelamin" id="jenis_kelamin" value="{{ table.jenis_kelamin }}" required>
+                    <option value="L" {% if table.jenis_kelamin == 'L' %}selected{% endif %}>Laki-laki</option>
+                    <option value="P" {% if table.jenis_kelamin == 'P' %}selected{% endif %}>Perempuan</option>
+                </select>
+            </div>
 
-                    <!-- Keluhan -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="keluhan">Keluhan</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Keluhan" type="text" name="keluhan" id="keluhan">
-                    </div>
+            <!-- Tanggal Lahir -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="tanggal_lahir" class="flex items-center text-dark w-1/3">Tanggal Lahir</label>
+                <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="{{ table.tanggal_lahir }}" class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+            </div>
 
-                    <!-- Jenis Kelamin -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="jenis_kelamin">Jenis Kelamin</label>
-                        <select class="border-2 border-gray-500 w-[80%] p-2" name="jenis_kelamin" id="jenis_kelamin">
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                        </select>
-                    </div>
+            <!-- Alamat -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="alamat" class="flex items-center text-dark w-1/3">Alamat</label>
+                <input type="text" id="alamat" name="alamat" placeholder="Alamat" value="{{ table.alamat }}" class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+            </div>
 
-                    <!-- Tanggal Lahir -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="tanggal_lahir">Tanggal Lahir</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" type="text" id="tanggal_lahir" name="tanggal_lahir" >
-                    </div>
+            <!-- No HP -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="no_hp" class="flex items-center text-dark w-1/3">No HP</label>
+                <input type="text" id="no_hp" name="no_hp" placeholder="No Hp" value="{{ table.no_hp }}" class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" required>
+            </div>
 
-                    <!-- Alamat -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="alamat">Alamat</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="Alamat" type="text" name="alamat" id="alamat">
-                    </div>
+            <!-- Nama Petugas -->
+            <div class="flex justify-between gap-6 py-4">
+                <label for="id_petugas" class="flex items-center text-dark w-1/3">Nama Petugas</label>
+                <select class="border-2 border-accent w-2/3 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-accent" name="id_petugas" id="id_petugas" required>
+                    {% for A in option_petugas %}
+                    <option value="{{ A.id_petugas }}" {% if A.id_petugas == table.id_petugas %}selected{% endif %}>{{ A.nama_petugas }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-                    <!-- No HP -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="no_hp">No HP</label>
-                        <input class="border-2 border-gray-500 w-[80%] p-2" placeholder="No HP" type="text" name="no_hp" id="no_hp">
-                    </div>
+            <!-- Submit Button -->
+            <div class="flex justify-end gap-6 p-6">
+                <a href="{{ url_for('routes.pemeriksaan') }}" class="px-8 py-3 border-2 border-accent text-accent hover:bg-accent hover:text-whites transition-colors">Back to Table</a>
+                <button type="submit" class="px-8 py-3 bg-accent text-whites hover:bg-accent-dark transition-colors">Update</button>
+            </div>
+        </form>
+    </section>
 
-                    <!-- Petugas Admin -->
-                    <div class="flex justify-between gap-4 p-4">
-                        <label class="align-middle flex p-0 text-dark" for="id_petugas">Nama Petugas</label>
-                        <select class="border-2 border-gray-500 w-[80%] p-2" name="id_petugas" id="id_petugas">
-                            <option value="ADM001">Rini Widya</option>
-                            <option value="ADM002">Bagas Santoso</option>
-                            <option value="ADM003">Siti Lestari</option>
-                            <option value="ADM004">Adi Wijaya</option>
-                            <option value="ADM005">Lina Sari</option>
-                            <option value="ADM006">Andi Saputra</option>
-                            <option value="ADM007">Maya Putri</option>
-                            <option value="ADM008">Heri Kurniawan</option>
-                            <option value="ADM009">Fitra Handayani</option>
-                            <option value="ADM0010">Dedi Susanto</option>
-                            <option value="ADM0011">Ratna Dewi</option>
-                            <option value="ADM0012">Yudi Firmansyah</option>
-                            <option value="ADM0013">Rika Murni</option>
-                            <option value="ADM0014">Sandi Pratama</option>
-                            <option value="ADM0015">Rita Amalia</option>
-                            <option value="ADM0016">Zaki Arya</option>
-                            <option value="ADM0017">Fara Anna</option>
-                        </select>
-                    </div>
-                    <div class="flex justify-end gap-6 p-4">
-                        <a href="{{ url_for('routes.table_pasien') }}" class="px-8 py-3 border-[2px] border-accent text-accent box-border">Back to Table A List</a>
-                        <button type="submit" class="px-8 py-3 bg-accent text-whites">Unggah</button>
-                    </div>
-                </div>
-            </form>
-            <br>
-        </section>
-    </div>
+  </div>
 </main>
 {% endblock %}

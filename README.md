@@ -1,8 +1,8 @@
-# Flask-Pyodbc-SQLServer GUI 
-## Final project for Undergraduate Course in Database
+# Flask-pyodbc-sqlserver GUI 
+## Final project for Database Course 
 # 
 
-### This WebApp implements basic SQL Queries and basic CRUD functionality using SQLServer, with Flask to serve the backend. Frontend uses Flask's Jinja2 templates, styled with tailwind.
+### This web app implements basic SQL Queries and basic CRUD functionality using SQLServer, with Flask to serve the backend. Frontend uses Flask's Jinja2 templates, styled with Tailwind.
 # 
 
 ### How to run
@@ -17,7 +17,7 @@
       py main.py
 
 ### Contributors:
-- Diva Muthi'ah Sholihah :: [divamuth](https://github.com/divamuth)
-- Fathoni Nur Habibi :: [Fathoni1509](https://github.com/Fathoni1509)
-- Fredy Tri Ramadhan :: [This](https://github.com/FredyRamadhan)
-- Hellen Aurelia Syafaatunnas :: [hellenaurelia](https://github.com/hellenaurelia)
+- Diva Muthi'ah Sholihah          :: [divamuth](https://github.com/divamuth)
+- Fathoni Nur Habibi              :: [Fathoni1509](https://github.com/Fathoni1509)
+- Fredy Tri Ramadhan              :: [This](https://github.com/FredyRamadhan)
+- Hellen Aurelia Syafaatunnas     :: [hellenaurelia](https://github.com/hellenaurelia)

@@ -21,32 +21,6 @@
             }
         }
     </script>
-
-    <style>
-        .running-text {
-            width: 100%;
-            overflow: hidden;
-            white-space: nowrap;
-            box-sizing: border-box;
-            background-color: #44A1A0; /* Background warna abu-abu muda */
-            padding: 10px; /* Memberikan jarak di dalam teks */
-            /* border: 1px solid #ccc; Opsional: border */
-            color: white;
-        }
-        .running-text span {
-            display: inline-block;
-            padding-left: 50%; /* Menyediakan ruang kosong sebelum teks muncul */
-            animation: scroll-text 8s linear infinite; /* Durasi 15 detik */
-        }
-        @keyframes scroll-text {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-    </style>
 </head>
 <body class="bg-base">
 
@@ -91,9 +65,6 @@
                 {% endblock %}
             </div> <!--  Main Content Area -->
         </div> <!--  Sidebar and Main Content Container -->
-        <div class="running-text">
-            <span>Misiii Pakettt Numpang Lewat, Maaf YYYYY    Monggo berobat</span>
-        </div>
     </div> <!-- Main Container -->
 
 </body>
